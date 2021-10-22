@@ -1,0 +1,148 @@
+{
+  "name": "LNFeedModule",
+  "version": "0.1.0",
+  "summary": "Feed流模块.",
+  "description": "实现feed流模块.",
+  "homepage": "https://github.com/NoNameOrganazation",
+  "license": {
+    "type": "MIT",
+    "file": "LICENSE"
+  },
+  "authors": {
+    "dongjianxiong": "jianxiong20090919@126.com"
+  },
+  "source": {
+    "git": "https://github.com/NoNameOrganazation/LNFeedModule.git",
+    "tag": "0.1.0"
+  },
+  "platforms": {
+    "ios": "9.0"
+  },
+  "source_files": "LNFeedModule/Classes/*",
+  "public_header_files": "LNFeedModule/Classes/*.h",
+  "dependencies": {
+    "LNModuleProtocol": [
+
+    ],
+    "LNModuleCore": [
+
+    ],
+    "LNLogin": [
+
+    ]
+  },
+  "subspecs": [
+    {
+      "name": "UIKit",
+      "source_files": "LNFeedModule/Classes/UIKit/**/*",
+      "public_header_files": "LNFeed/Classes/UIKit/*.h"
+    },
+    {
+      "name": "Router",
+      "source_files": "LNFeedModule/Classes/Router/**/*",
+      "public_header_files": "LNFeedModule/Classes/Router/*.h"
+    },
+    {
+      "name": "Common",
+      "source_files": "LNFeedModule/Classes/Common/**/*",
+      "public_header_files": "LNFeedModule/Classes/Common/*.h"
+    },
+    {
+      "name": "Base",
+      "source_files": "LNFeedModule/Classes/Base/**/*",
+      "public_header_files": "LNFeedModule/Classes/Base/*.h",
+      "dependencies": {
+        "LNFeedModule/UIKit": [
+
+        ],
+        "LNFeedModule/Router": [
+
+        ],
+        "LNFeedModule/Common": [
+
+        ],
+        "MJRefresh": [
+
+        ],
+        "SDWebImage": [
+
+        ]
+      }
+    },
+    {
+      "name": "Feed",
+      "source_files": "LNFeedModule/Classes/Feed/**/*",
+      "public_header_files": "LNFeedModule/Classes/Feed/*.h",
+      "subspecs": [
+        {
+          "name": "BaseFeed",
+          "source_files": "LNFeedModule/Classes/Feed/BaseFeed/**/*",
+          "public_header_files": "LNFeed/Classes/Feed/BaseFeed/*.h",
+          "dependencies": {
+            "LNFeedModule/Base": [
+
+            ],
+            "LNFeedModule/Topic": [
+
+            ]
+          }
+        },
+        {
+          "name": "FeedDetail",
+          "source_files": "LNFeedModule/Classes/Feed/FeedDetail/**/*",
+          "public_header_files": "LNFeedModule/Classes/Feed/FeedDetail/*.h",
+          "dependencies": {
+            "LNFeedModule/Feed/BaseFeed": [
+
+            ]
+          }
+        },
+        {
+          "name": "Recommend",
+          "source_files": "LNFeedModule/Classes/Feed/Recommend/**/*",
+          "public_header_files": "LNFeedModule/Classes/Feed/Recommend/*.h",
+          "dependencies": {
+            "LNFeedModule/Feed/BaseFeed": [
+
+            ]
+          }
+        },
+        {
+          "name": "TimeLine",
+          "source_files": "LNFeedModule/Classes/Feed/TimeLine/**/*",
+          "public_header_files": "LNFeedModule/Classes/Feed/TimeLine/*.h",
+          "dependencies": {
+            "LNFeedModule/Feed/BaseFeed": [
+
+            ]
+          }
+        }
+      ]
+    },
+    {
+      "name": "Topic",
+      "source_files": "LNFeedModule/Classes/Topic/**/*",
+      "public_header_files": "LNFeedModule/Classes/Topic/*.h",
+      "dependencies": {
+        "LNFeedModule/Base": [
+
+        ]
+      }
+    },
+    {
+      "name": "Mediator",
+      "source_files": "LNFeedModule/Classes/Mediator/**/*",
+      "dependencies": {
+        "LNFeedModule/Router": [
+
+        ],
+        "LNFeedModule/Feed": [
+
+        ],
+        "LNFeedModule/Topic": [
+
+        ]
+      }
+    }
+  ]
+}

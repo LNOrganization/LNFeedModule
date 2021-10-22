@@ -37,9 +37,9 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
-		11C6E317D1B270AC6686B012 /* LNFeedModule.podspec */ = {isa = PBXFileReference; includeInIndex = 1; name = LNFeedModule.podspec; path = ../LNFeedModule.podspec; sourceTree = "<group>"; };
+		11C6E317D1B270AC6686B012 /* LNFeedModule.podspec */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text; name = LNFeedModule.podspec; path = ../LNFeedModule.podspec; sourceTree = "<group>"; xcLanguageSpecificationIdentifier = xcode.lang.ruby; };
 		31AA5A6E6DBF456C7E8DA3F6 /* Pods-LNFeedModule_Tests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-LNFeedModule_Tests.debug.xcconfig"; path = "Target Support Files/Pods-LNFeedModule_Tests/Pods-LNFeedModule_Tests.debug.xcconfig"; sourceTree = "<group>"; };
-		5E649208CF2A0DC779F51987 /* README.md */ = {isa = PBXFileReference; includeInIndex = 1; name = README.md; path = ../README.md; sourceTree = "<group>"; };
+		5E649208CF2A0DC779F51987 /* README.md */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = net.daringfireball.markdown; name = README.md; path = ../README.md; sourceTree = "<group>"; };
 		6003F58A195388D20070C39A /* LNFeedModule_Example.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = LNFeedModule_Example.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		6003F58D195388D20070C39A /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
 		6003F58F195388D20070C39A /* CoreGraphics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreGraphics.framework; path = System/Library/Frameworks/CoreGraphics.framework; sourceTree = SDKROOT; };
@@ -65,7 +65,7 @@
 		787EE281D785A8FF398BCFB8 /* Pods_LNFeedModule_Example.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_LNFeedModule_Example.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		873B8AEA1B1F5CCA007FD442 /* Main.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; name = Main.storyboard; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		AC9ECF8D40FA28AC81FFA612 /* Pods_LNFeedModule_Tests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_LNFeedModule_Tests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
-		D63752394AB94D93AB1952E3 /* LICENSE */ = {isa = PBXFileReference; includeInIndex = 1; name = LICENSE; path = ../LICENSE; sourceTree = "<group>"; };
+		D63752394AB94D93AB1952E3 /* LICENSE */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text; name = LICENSE; path = ../LICENSE; sourceTree = "<group>"; };
 		DD205AEDB49A46D684AF422B /* Pods-LNFeedModule_Example.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-LNFeedModule_Example.debug.xcconfig"; path = "Target Support Files/Pods-LNFeedModule_Example/Pods-LNFeedModule_Example.debug.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -193,7 +193,6 @@
 				31AA5A6E6DBF456C7E8DA3F6 /* Pods-LNFeedModule_Tests.debug.xcconfig */,
 				718CEAAF5FC38F5A98B25D3E /* Pods-LNFeedModule_Tests.release.xcconfig */,
 			);
-			name = Pods;
 			path = Pods;
 			sourceTree = "<group>";
 		};
@@ -258,6 +257,7 @@
 			developmentRegion = English;
 			hasScannedForEncodings = 0;
 			knownRegions = (
+				English,
 				en,
 				Base,
 			);
@@ -325,10 +325,20 @@
 			inputPaths = (
 				"${PODS_ROOT}/Target Support Files/Pods-LNFeedModule_Example/Pods-LNFeedModule_Example-frameworks.sh",
 				"${BUILT_PRODUCTS_DIR}/LNFeedModule/LNFeedModule.framework",
+				"${BUILT_PRODUCTS_DIR}/LNLogin/LNLogin.framework",
+				"${BUILT_PRODUCTS_DIR}/LNModuleCore/LNModuleCore.framework",
+				"${BUILT_PRODUCTS_DIR}/LNModuleProtocol/LNModuleProtocol.framework",
+				"${BUILT_PRODUCTS_DIR}/MJRefresh/MJRefresh.framework",
+				"${BUILT_PRODUCTS_DIR}/SDWebImage/SDWebImage.framework",
 			);
 			name = "[CP] Embed Pods Frameworks";
 			outputPaths = (
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/LNFeedModule.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/LNLogin.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/LNModuleCore.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/LNModuleProtocol.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/MJRefresh.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/SDWebImage.framework",
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;

@@ -1,0 +1,6 @@
+framework module Pods_LNFeedModule_Example {
+  umbrella header "Pods-LNFeedModule_Example-umbrella.h"
+
+  export *
+  module * { export * }
+}

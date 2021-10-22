@@ -1,0 +1,6 @@
+framework module LNLogin {
+  umbrella header "LNLogin-umbrella.h"
+
+  export *
+  module * { export * }
+}
