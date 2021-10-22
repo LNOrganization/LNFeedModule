@@ -325,7 +325,6 @@
 			inputPaths = (
 				"${PODS_ROOT}/Target Support Files/Pods-LNFeedModule_Example/Pods-LNFeedModule_Example-frameworks.sh",
 				"${BUILT_PRODUCTS_DIR}/LNFeedModule/LNFeedModule.framework",
-				"${BUILT_PRODUCTS_DIR}/LNLogin/LNLogin.framework",
 				"${BUILT_PRODUCTS_DIR}/LNModuleCore/LNModuleCore.framework",
 				"${BUILT_PRODUCTS_DIR}/LNModuleProtocol/LNModuleProtocol.framework",
 				"${BUILT_PRODUCTS_DIR}/MJRefresh/MJRefresh.framework",
@@ -334,7 +333,6 @@
 			name = "[CP] Embed Pods Frameworks";
 			outputPaths = (
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/LNFeedModule.framework",
-				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/LNLogin.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/LNModuleCore.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/LNModuleProtocol.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/MJRefresh.framework",

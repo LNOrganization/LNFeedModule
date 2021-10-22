@@ -7,20 +7,17 @@ PODS:
     - LNFeedModule/Router (= 0.1.0)
     - LNFeedModule/Topic (= 0.1.0)
     - LNFeedModule/UIKit (= 0.1.0)
-    - LNLogin
     - LNModuleCore
     - LNModuleProtocol
   - LNFeedModule/Base (0.1.0):
     - LNFeedModule/Common
     - LNFeedModule/Router
     - LNFeedModule/UIKit
-    - LNLogin
     - LNModuleCore
     - LNModuleProtocol
     - MJRefresh
     - SDWebImage
   - LNFeedModule/Common (0.1.0):
-    - LNLogin
     - LNModuleCore
     - LNModuleProtocol
   - LNFeedModule/Feed (0.1.0):
@@ -28,52 +25,41 @@ PODS:
     - LNFeedModule/Feed/FeedDetail (= 0.1.0)
     - LNFeedModule/Feed/Recommend (= 0.1.0)
     - LNFeedModule/Feed/TimeLine (= 0.1.0)
-    - LNLogin
     - LNModuleCore
     - LNModuleProtocol
   - LNFeedModule/Feed/BaseFeed (0.1.0):
     - LNFeedModule/Base
     - LNFeedModule/Topic
-    - LNLogin
     - LNModuleCore
     - LNModuleProtocol
   - LNFeedModule/Feed/FeedDetail (0.1.0):
     - LNFeedModule/Feed/BaseFeed
-    - LNLogin
     - LNModuleCore
     - LNModuleProtocol
   - LNFeedModule/Feed/Recommend (0.1.0):
     - LNFeedModule/Feed/BaseFeed
-    - LNLogin
     - LNModuleCore
     - LNModuleProtocol
   - LNFeedModule/Feed/TimeLine (0.1.0):
     - LNFeedModule/Feed/BaseFeed
-    - LNLogin
     - LNModuleCore
     - LNModuleProtocol
   - LNFeedModule/Mediator (0.1.0):
     - LNFeedModule/Feed
     - LNFeedModule/Router
     - LNFeedModule/Topic
-    - LNLogin
     - LNModuleCore
     - LNModuleProtocol
   - LNFeedModule/Router (0.1.0):
-    - LNLogin
     - LNModuleCore
     - LNModuleProtocol
   - LNFeedModule/Topic (0.1.0):
     - LNFeedModule/Base
-    - LNLogin
     - LNModuleCore
     - LNModuleProtocol
   - LNFeedModule/UIKit (0.1.0):
-    - LNLogin
     - LNModuleCore
     - LNModuleProtocol
-  - LNLogin (0.1.4):
-    - LNModuleProtocol (= 0.1.0)
   - LNModuleCore (0.1.2)
   - LNModuleProtocol (0.1.0):
     - LNModuleCore (= 0.1.2)
@@ -90,7 +76,6 @@ SPEC REPOS:
     - MJRefresh
     - SDWebImage
   https://github.com/NoNameOrganazation/LNSpec.git:
-    - LNLogin
     - LNModuleCore
     - LNModuleProtocol
 
@@ -99,8 +84,7 @@ EXTERNAL SOURCES:
     :path: "../"
 
 SPEC CHECKSUMS:
-  LNFeedModule: 6f37f549d376f05431025796a267212f2776245b
-  LNLogin: 425896654c4e1b18d53724adf65e6426764b8bdc
+  LNFeedModule: 117bcf8a72744fcec21de30c992a2ec22ad70f3e
   LNModuleCore: 76bb3c1f2694bbc39a78e3d59d3203f8fa8a308a
   LNModuleProtocol: b6c898b53fa7808261dd18460b2441511e8b2a1b
   MJRefresh: 30997d30b347c8e9508a4db11e3a690da0c9b85a

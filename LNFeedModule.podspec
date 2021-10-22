@@ -8,7 +8,7 @@
 
 Pod::Spec.new do |s|
   s.name             = 'LNFeedModule'
-  s.version          = '0.1.0'
+  s.version          = '0.1.1'
   s.summary          = 'Feed流模块.'
 
 # This description is used to generate tags and improve search results.
@@ -104,7 +104,6 @@ Pod::Spec.new do |s|
   
   s.dependency 'LNModuleProtocol'
   s.dependency 'LNModuleCore'
-  s.dependency 'LNLogin'
 
   # s.resource_bundles = {
   #   'LNFeed' => ['LNFeed/Assets/*.png']

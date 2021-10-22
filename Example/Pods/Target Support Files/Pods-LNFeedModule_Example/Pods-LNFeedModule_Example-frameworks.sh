@@ -176,7 +176,6 @@ code_sign_if_enabled() {
 
 if [[ "$CONFIGURATION" == "Debug" ]]; then
   install_framework "${BUILT_PRODUCTS_DIR}/LNFeedModule/LNFeedModule.framework"
-  install_framework "${BUILT_PRODUCTS_DIR}/LNLogin/LNLogin.framework"
   install_framework "${BUILT_PRODUCTS_DIR}/LNModuleCore/LNModuleCore.framework"
   install_framework "${BUILT_PRODUCTS_DIR}/LNModuleProtocol/LNModuleProtocol.framework"
   install_framework "${BUILT_PRODUCTS_DIR}/MJRefresh/MJRefresh.framework"
@@ -184,7 +183,6 @@ if [[ "$CONFIGURATION" == "Debug" ]]; then
 fi
 if [[ "$CONFIGURATION" == "Release" ]]; then
   install_framework "${BUILT_PRODUCTS_DIR}/LNFeedModule/LNFeedModule.framework"
-  install_framework "${BUILT_PRODUCTS_DIR}/LNLogin/LNLogin.framework"
   install_framework "${BUILT_PRODUCTS_DIR}/LNModuleCore/LNModuleCore.framework"
   install_framework "${BUILT_PRODUCTS_DIR}/LNModuleProtocol/LNModuleProtocol.framework"
   install_framework "${BUILT_PRODUCTS_DIR}/MJRefresh/MJRefresh.framework"
