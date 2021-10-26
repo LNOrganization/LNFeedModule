@@ -1,14 +1,14 @@
 //
-//  LNTopiclistModelController.m
+//  LNFeedTopicListModelController.m
 //  ArchitectureDesign
 //
 //  Created by Lenny on 2021/9/3.
 //
 
-#import "LNTopiclistModelController.h"
+#import "LNFeedTopicListModelController.h"
 #import "LNTopic.h"
 
-@implementation LNTopiclistModelController
+@implementation LNFeedTopicListModelController
 //dispatch_async(dispatch_get_global_queue(0, 0), ^{
 //    for (NSInteger index = 0; index < self.pageSize; index ++) {
 //

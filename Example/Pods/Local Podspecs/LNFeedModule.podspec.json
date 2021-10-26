@@ -81,6 +81,12 @@
             ],
             "LNFeedModule/Topic": [
 
+            ],
+            "LNFeedModule/Comment": [
+
+            ],
+            "LNFeedModule/Like": [
+
             ]
           }
         },
@@ -88,6 +94,16 @@
           "name": "FeedDetail",
           "source_files": "LNFeedModule/Classes/Feed/FeedDetail/**/*",
           "public_header_files": "LNFeedModule/Classes/Feed/FeedDetail/*.h",
+          "dependencies": {
+            "LNFeedModule/Feed/BaseFeed": [
+
+            ]
+          }
+        },
+        {
+          "name": "TopicFeed",
+          "source_files": "LNFeedModule/Classes/Feed/TopicFeed/**/*",
+          "public_header_files": "LNFeedModule/Classes/Feed/TopicFeed/*.h",
           "dependencies": {
             "LNFeedModule/Feed/BaseFeed": [
 
@@ -127,6 +143,26 @@
       }
     },
     {
+      "name": "Like",
+      "source_files": "LNFeedModule/Classes/Like/**/*",
+      "public_header_files": "LNFeedModule/Classes/Like/*.h",
+      "dependencies": {
+        "LNFeedModule/Base": [
+
+        ]
+      }
+    },
+    {
+      "name": "Comment",
+      "source_files": "LNFeedModule/Classes/Comment/**/*",
+      "public_header_files": "LNFeedModule/Classes/Comment/*.h",
+      "dependencies": {
+        "LNFeedModule/Base": [
+
+        ]
+      }
+    },
+    {
       "name": "Mediator",
       "source_files": "LNFeedModule/Classes/Mediator/**/*",
       "dependencies": {
@@ -134,6 +170,12 @@
 
         ],
         "LNFeedModule/Topic": [
+
+        ],
+        "LNFeedModule/Comment": [
+
+        ],
+        "LNFeedModule/Like": [
 
         ]
       }

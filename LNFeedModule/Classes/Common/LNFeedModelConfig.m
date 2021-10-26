@@ -28,4 +28,10 @@
     return feedBundle;
 }
 
++(id<LNAccountModuleProtocol>)acccountDelegate
+{
+    id<LNAccountModuleProtocol> accountModule = [[LNModuleManager sharedInstance] impInstanceForProtocol:@protocol(LNAccountModuleProtocol)];
+    return accountModule;
+}
+
 @end

@@ -1,25 +1,25 @@
 //
-//  LNTopicTableViewController.m
+//  LNFeedTopicTableViewController.m
 //  ArchitectureDesign
 //
 //  Created by Lenny on 2021/9/3.
 //
 
-#import "LNTopicTableViewController.h"
-#import "LNTopiclistModelController.h"
+#import "LNFeedTopicTableViewController.h"
+#import "LNFeedTopicListModelController.h"
 
-@interface LNTopicTableViewController ()
+@interface LNFeedTopicTableViewController ()
 
 @end
 
-@implementation LNTopicTableViewController
+@implementation LNFeedTopicTableViewController
 
 - (void)viewDidLoad {
     [super viewDidLoad];
     
     self.tableView.rowHeight = 40;
     
-    self.modelController = [[LNTopiclistModelController alloc] init];
+    self.modelController = [[LNFeedTopicListModelController alloc] init];
     
     [self.modelController startRefreshData];
     // Do any additional setup after loading the view.

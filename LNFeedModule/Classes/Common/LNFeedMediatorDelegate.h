@@ -35,16 +35,17 @@
 
 - (UIViewController *)createUserCenterVCWithUser:(LNUser *)user;
 
-/**
- * 创建Feed详情页
- */
 - (UIViewController *)createFeedDetailVCWithFeed:(LNFeed *)feed;
 
-/**
- * 创建Feed详情页
- */
 - (UIViewController *)createFeedDetailVCWithFeedId:(NSString *)feedId;
 
 - (UIViewController *)createTopicVC;
+
+- (UIViewController *)createTopicTableVCWithFeed:(LNFeed *)feed;
+
+- (UIViewController *)createCommentVCWithFeed:(LNFeed *)feed;
+
+- (UIViewController *)createLikeTableVC;
+
 
 @end

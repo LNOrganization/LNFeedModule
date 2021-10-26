@@ -7,13 +7,17 @@
 
 #import "LNFeedMediator.h"
 #import <LNCommonKit/LNRouter.h>
+
 #import "LNTopicFeedTableViewController.h"
 #import "LNFeedDetailViewController.h"
-#import "LNTopicTableViewController.h"
 #import "LNFeedRecommendViewController.h"
 #import "LNFeedTimeLineViewController.h"
 #import "LNFeedDetailViewController.h"
 #import "LNFeedMainViewController.h"
+
+#import "LNFeedTopicTableViewController.h"
+#import "LBFeedComentViewController.h"
+#import "LBFeedLikeTableViewController.h"
 
 @interface LNFeedMediator ()
 
@@ -82,8 +86,25 @@
 }
 
 - (UIViewController *)createTopicVC {
-    LNTopicTableViewController *topicVc = [[LNTopicTableViewController alloc] init];
+    LNFeedTopicTableViewController *topicVc = [[LNFeedTopicTableViewController alloc] init];
     return topicVc;
+}
+
+
+- (UIViewController *)createTopicTableVCWithFeed:(LNFeed *)feed
+{
+    LNFeedTopicTableViewController *topicVc = [[LNFeedTopicTableViewController alloc] init];
+    return topicVc;
+}
+
+- (UIViewController *)createCommentVCWithFeed:(LNFeed *)feed {
+    LBFeedComentViewController *commentVc = [[LBFeedComentViewController alloc] init];
+    return commentVc;
+}
+
+- (UIViewController *)createLikeTableVC {
+    LBFeedLikeTableViewController *likeVc = [[LBFeedLikeTableViewController alloc] init];
+    return likeVc;
 }
 
 
@@ -152,7 +173,7 @@
 //}
 //
 //- (void)showTopicVc {
-//    LNTopicTableViewController *topicVC = [[LNTopicTableViewController alloc] init];
+//    LNFeedTopicTableViewController *topicVC = [[LNFeedTopicTableViewController alloc] init];
 //    [LNRouter pushToViewControll:topicVC];
 //}
 

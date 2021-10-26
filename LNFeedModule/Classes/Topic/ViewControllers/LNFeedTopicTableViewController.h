@@ -1,5 +1,5 @@
 //
-//  LNTopicTableViewController.h
+//  LNFeedTopicTableViewController.h
 //  ArchitectureDesign
 //
 //  Created by Lenny on 2021/9/3.
@@ -9,7 +9,7 @@
 
 NS_ASSUME_NONNULL_BEGIN
 
-@interface LNTopicTableViewController : LNBaseTableViewController
+@interface LNFeedTopicTableViewController : LNBaseTableViewController
 
 @end
 

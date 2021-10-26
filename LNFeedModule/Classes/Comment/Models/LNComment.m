@@ -6,7 +6,6 @@
 //
 
 #import "LNComment.h"
-#import "LNUser.h"
 
 @implementation LNComment
 
