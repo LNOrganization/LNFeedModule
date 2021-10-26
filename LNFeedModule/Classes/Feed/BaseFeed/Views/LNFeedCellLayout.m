@@ -79,7 +79,7 @@ CGFloat const LNFeedCellCententOffsetX = 20;
         self.forwordFeedFrame = CGRectMake(_forwardOffsetX, cellHeight, contentSize.width, forwardFeedHeight);
         cellHeight += forwardFeedHeight;
         _forwardFeedContent = [forwardFeedContent copy];
-        [self findAllLinkStrWithString:_forwardFeedContent.string];
+//        [self findAllLinkStrWithString:_forwardFeedContent.string];
     }
     
     self.createTimeFrame = CGRectMake([UIScreen width]/2 - _commonMarginX, cellHeight, [UIScreen width]/2, 30);
@@ -121,22 +121,22 @@ CGFloat const LNFeedCellCententOffsetX = 20;
     return contentAtt;
 }
 
-- (void)findAllLinkStrWithString:(NSString *)string
-{
-    for (NSString *regex in [self regexs]) {
-        NSError *error;
-        NSRegularExpression *regular = [NSRegularExpression regularExpressionWithPattern:regex options:0 error:&error];
-        if (!error) {
-            NSTextCheckingResult *match = [regular firstMatchInString:string options:0 range:NSMakeRange(0, [string length])];
-            if (match) {
-                NSString *result = [string substringWithRange:match.range];
-//                NSLog(@"%@",result);
-            }
-        }else{
-            NSLog(@"error -- %@",error);
-        }
-    }
-}
+//- (void)findAllLinkStrWithString:(NSString *)string
+//{
+//    for (NSString *regex in [self regexs]) {
+//        NSError *error;
+//        NSRegularExpression *regular = [NSRegularExpression regularExpressionWithPattern:regex options:0 error:&error];
+//        if (!error) {
+//            NSTextCheckingResult *match = [regular firstMatchInString:string options:0 range:NSMakeRange(0, [string length])];
+//            if (match) {
+//                NSString *result = [string substringWithRange:match.range];
+////                NSLog(@"%@",result);
+//            }
+//        }else{
+//            NSLog(@"error -- %@",error);
+//        }
+//    }
+//}
 
 - (NSArray *)regexs
 {

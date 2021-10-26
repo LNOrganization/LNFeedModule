@@ -29,8 +29,8 @@
 {
     if (!_imageColectionView) {
         UICollectionViewFlowLayout *layout = [[UICollectionViewFlowLayout alloc] init];
-        layout.minimumLineSpacing = 5;
-        layout.minimumInteritemSpacing = 5;
+        layout.minimumLineSpacing = 3;
+        layout.minimumInteritemSpacing = 4;
         layout.itemSize = CGSizeMake(([UIScreen width] - 30 - 10)/3, (LNUIScreenWidth - 30 - 10)/3);
         _imageColectionView = [[UICollectionView alloc] initWithFrame:CGRectZero collectionViewLayout:layout];
         [_imageColectionView registerClass:[LNFeedImageCollectionViewCell class] forCellWithReuseIdentifier:@"LNFeedImageCollectionViewCell"];

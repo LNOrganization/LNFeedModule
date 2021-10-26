@@ -1,18 +1,18 @@
 //
-//  LNRecommendListModelController.m
+//  LNFeedTimeLineModelController.m
 //  ArchitectureDesign
 //
 //  Created by Lenny on 2021/8/30.
 //
 
-#import "LNRecommendListModelController.h"
+#import "LNFeedTimeLineModelController.h"
 #import "LNFeed.h"
 #import "LNUser.h"
 #import "LNComment.h"
 #import "LNTopic.h"
 #import "LNFeedCellLayout.h"
 
-@implementation LNRecommendListModelController
+@implementation LNFeedTimeLineModelController
 
 - (void)requestWithCompletion:(LNListRequestCompletion)completion
 {
@@ -62,7 +62,7 @@
             }else{
                 feed.originFeed = feed;
             }
-            feed.createTime = [[NSDate date] timeIntervalSince1970];
+            
             LNFeedCellLayout *feedLayout = [[LNFeedCellLayout alloc] init];
             feedLayout.feed = feed;
             [dataList addObject:feedLayout];

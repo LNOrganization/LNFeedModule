@@ -81,16 +81,19 @@ clickOnStoreFeed:(nonnull LNFeed *)feed
 
 
 - (void)feedView:(nonnull UIView *)view clickOnTopic:(nonnull LNTopic *)topic {
-    [self.mediator showTopicFeedListVcWithTopic:topic];
+    [LNRouter pushToViewControll:[self.mediator createTopicFeedListVCWithTopic:topic]];
+//    [self.mediator showTopicFeedListVcWithTopic:topic];
 }
 
 - (void)feedView:(UIView *)view clickOnCommentFeed:(LNFeed *)feed
 {
-    [self.mediator showFeedDetailVcWithFeed:feed];
+//    [self.mediator showFeedDetailVcWithFeed:feed];
+    [LNRouter pushToViewControll:[self.mediator createFeedDetailVCWithFeed:feed]];
 }
 
 - (void)feedView:(nonnull UIView *)view clickOnUser:(nonnull LNUser *)user {
-    [self.mediator showUserCenterVcWithUser:user];
+//    [self.mediator showUserCenterVcWithUser:user];
+    [LNRouter pushToViewControll:[self.mediator createUserCenterVCWithUser:user]];
 }
 
 

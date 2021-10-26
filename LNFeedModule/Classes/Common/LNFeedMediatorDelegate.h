@@ -13,21 +13,38 @@
 // 实现类 Mediator/LNFeedMediator
 @protocol LNFeedMediatorDelegate <NSObject>
 
-- (void)showFeedDetailVcWithFeed:(LNFeed *)feed;
-
-- (void)showTopicFeedListVcWithTopic:(LNTopic *)topic;
-
-- (void)showUserCenterVcWithUser:(LNUser *)user;
-
-- (void)showTopicVc;
+//- (void)showFeedDetailVcWithFeed:(LNFeed *)feed;
+//
+//- (void)showTopicFeedListVcWithTopic:(LNTopic *)topic;
+//
+//- (void)showUserCenterVcWithUser:(LNUser *)user;
+//
+//- (void)showTopicVc;
 
 /*创建ViewController*/
+
+- (UIViewController *)createFeedMainVC;
+
+- (UIViewController *)createFeedRecommendVC;
+
+- (UIViewController *)createFeedTimeLineVC;
+
+- (UIViewController *)createFeedFoucusVC;
+
 - (UIViewController *)createTopicFeedListVCWithTopic:(LNTopic *)topic;
 
 - (UIViewController *)createUserCenterVCWithUser:(LNUser *)user;
 
-- (UIViewController *)creatFeedDetailVCWithFeed:(LNFeed *)feed;
+/**
+ * 创建Feed详情页
+ */
+- (UIViewController *)createFeedDetailVCWithFeed:(LNFeed *)feed;
 
-- (UIViewController *)creatTopicVc;
+/**
+ * 创建Feed详情页
+ */
+- (UIViewController *)createFeedDetailVCWithFeedId:(NSString *)feedId;
+
+- (UIViewController *)createTopicVC;
 
 @end

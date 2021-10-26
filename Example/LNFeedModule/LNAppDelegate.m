@@ -7,11 +7,16 @@
 //
 
 #import "LNAppDelegate.h"
+#import "LNTabBarViewController.h"
 
 @implementation LNAppDelegate
 
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions
 {
+    
+    LNTabBarViewController *rootVc = [[LNTabBarViewController alloc] init];
+    UINavigationController *navi = [[UINavigationController alloc] initWithRootViewController:rootVc];
+    self.window.rootViewController = navi;
     // Override point for customization after application launch.
     return YES;
 }

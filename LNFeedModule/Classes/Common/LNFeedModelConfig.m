@@ -9,7 +9,7 @@
 
 @implementation LNFeedModelConfig
 
-+ (id<LNFeedMediatorDelegate>)mediator
++ (id<LNFeedMediatorDelegate>)feeMediator
 {
     static id<LNFeedMediatorDelegate> obj = nil;
     static dispatch_once_t onceToken;
@@ -18,6 +18,14 @@
     });
      
     return obj;
+}
+
++(NSBundle *)feedBundle
+{
+    NSBundle *bundle = [NSBundle bundleForClass:[self class]];
+    NSString *feedBundlePath = [bundle.resourcePath stringByAppendingPathComponent:@"LNFeedModule_Feed.bundle"];
+    NSBundle *feedBundle = [NSBundle bundleWithPath:feedBundlePath];
+    return feedBundle;
 }
 
 @end

@@ -175,6 +175,8 @@ code_sign_if_enabled() {
 }
 
 if [[ "$CONFIGURATION" == "Debug" ]]; then
+  install_framework "${BUILT_PRODUCTS_DIR}/LNAccountModule/LNAccountModule.framework"
+  install_framework "${BUILT_PRODUCTS_DIR}/LNCommonKit/LNCommonKit.framework"
   install_framework "${BUILT_PRODUCTS_DIR}/LNFeedModule/LNFeedModule.framework"
   install_framework "${BUILT_PRODUCTS_DIR}/LNModuleCore/LNModuleCore.framework"
   install_framework "${BUILT_PRODUCTS_DIR}/LNModuleProtocol/LNModuleProtocol.framework"
@@ -182,6 +184,8 @@ if [[ "$CONFIGURATION" == "Debug" ]]; then
   install_framework "${BUILT_PRODUCTS_DIR}/SDWebImage/SDWebImage.framework"
 fi
 if [[ "$CONFIGURATION" == "Release" ]]; then
+  install_framework "${BUILT_PRODUCTS_DIR}/LNAccountModule/LNAccountModule.framework"
+  install_framework "${BUILT_PRODUCTS_DIR}/LNCommonKit/LNCommonKit.framework"
   install_framework "${BUILT_PRODUCTS_DIR}/LNFeedModule/LNFeedModule.framework"
   install_framework "${BUILT_PRODUCTS_DIR}/LNModuleCore/LNModuleCore.framework"
   install_framework "${BUILT_PRODUCTS_DIR}/LNModuleProtocol/LNModuleProtocol.framework"

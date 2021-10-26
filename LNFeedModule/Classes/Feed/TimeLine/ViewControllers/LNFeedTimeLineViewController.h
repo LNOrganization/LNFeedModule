@@ -1,5 +1,5 @@
 //
-//  LNHomeViewController.h
+//  LNFeedTimeLineViewController.h
 //  ArchitectureDesign
 //
 //  Created by Lenny on 2021/8/30.
@@ -9,9 +9,8 @@
 
 NS_ASSUME_NONNULL_BEGIN
 
-@interface LNRecommendListViewController : LNBaseFeedTableViewController
+@interface LNFeedTimeLineViewController : LNBaseFeedTableViewController
 
 @end
-
 
 NS_ASSUME_NONNULL_END

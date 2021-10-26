@@ -24,14 +24,14 @@
 - (id<LNFeedMediatorDelegate>)mediator
 {
     if (!_mediator) {
-        _mediator = [LNFeedModelConfig mediator];
+        _mediator = [LNFeedModelConfig feeMediator];
     }
     return _mediator;
 }
 
 - (void)viewDidLoad {
     [super viewDidLoad];
-    
+    self.edgesForExtendedLayout = UIRectEdgeNone;
 
     // Do any additional setup after loading the view.
 }

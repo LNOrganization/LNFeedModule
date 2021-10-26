@@ -5,7 +5,7 @@ platform :ios, '9.0'
 
 target 'LNFeedModule_Example' do
   pod 'LNFeedModule', :path => '../'
-
+  pod 'LNAccountModule', '~>0.1.5'
   target 'LNFeedModule_Tests' do
     inherit! :search_paths
 

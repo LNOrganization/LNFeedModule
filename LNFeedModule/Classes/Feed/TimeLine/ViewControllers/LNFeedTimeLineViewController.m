@@ -1,24 +1,24 @@
 //
-//  LNTimeLineViewController.m
+//  LNFeedTimeLineViewController.m
 //  ArchitectureDesign
 //
 //  Created by Lenny on 2021/8/30.
 //
 
-#import "LNTimeLineViewController.h"
-#import "LNTimeLineListModelController.h"
+#import "LNFeedTimeLineViewController.h"
+#import "LNFeedTimeLineModelController.h"
 #import <MJRefresh/MJRefresh.h>
 
-@interface LNTimeLineViewController ()
+@interface LNFeedTimeLineViewController ()
 
 @end
 
-@implementation LNTimeLineViewController
+@implementation LNFeedTimeLineViewController
 
 - (void)viewDidLoad {
     [super viewDidLoad];
     self.isFirst = YES;
-    self.modelController = [[LNTimeLineListModelController alloc] init];
+    self.modelController = [[LNFeedTimeLineModelController alloc] init];
     // Do any additional setup after loading the view.
 }
 

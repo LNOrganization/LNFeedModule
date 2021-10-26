@@ -6,12 +6,10 @@
 //
 
 #import "LNFeedModule.h"
-#import "LNRecommendListViewController.h"
-#import "LNTimeLineViewController.h"
-#import "LNFeedDetailViewController.h"
+#import "LNFeedModelConfig.h"
+//#import "LNFeedMediatorDelegate.h"
 #import <LNModuleProtocol/LNFeedModuleProtocol.h>
-
-const NSString *LNFeedModuleClassName = @"LNFeedModule";
+#import <LNModuleCore/LNModuleCore.h>
 
 __attribute__((constructor)) void addModulLNFeedModule(void){
     static dispatch_once_t onceToken;
@@ -23,35 +21,47 @@ __attribute__((constructor)) void addModulLNFeedModule(void){
 
 @interface LNFeedModule ()<LNFeedModuleProtocol>
 
+/**
+ * feed Mediator 代理
+ */
+@property(nonatomic, strong) id<LNFeedMediatorDelegate> feedMediator;
+
+
 @end
 
 @implementation LNFeedModule
 
-
-- (UIViewController *)getFeedListViewControllerWithType:(NSInteger)type
+- (id<LNFeedMediatorDelegate>)feedMediator
 {
-    LNRecommendListViewController *feedVC = [[LNRecommendListViewController alloc] init];
+    if (!_feedMediator) {
+        _feedMediator = [LNFeedModelConfig feeMediator];
+    }
+    return _feedMediator;
+}
+
+#pragma mark - LNFeedModuleProtocol
+
+- (UIViewController *)getMainFeedViewController {
+    UIViewController *feedVC = [self.feedMediator createFeedMainVC];
     return feedVC;
 }
 
 - (UIViewController *)getFeedDetailViewControllerWithFeedId:(NSString *)feedId
 {
-    LNFeedDetailViewController *feedVC = [[LNFeedDetailViewController alloc] init];
+    UIViewController *feedVC = [self.feedMediator createFeedDetailVCWithFeedId:feedId];
     return feedVC;
 }
 
 - (UIViewController *)getRecommendFeedViewController {
-    LNRecommendListViewController *feedVC = [[LNRecommendListViewController alloc] init];
+    
+    UIViewController *feedVC = [self.feedMediator createFeedRecommendVC];
     return feedVC;
 }
-
 
 - (UIViewController *)getTimeLineFeedViewController {
-    LNTimeLineViewController *feedVC = [[LNTimeLineViewController alloc] init];
+    UIViewController *feedVC = [self.feedMediator createFeedTimeLineVC];
     return feedVC;
 }
-
-
 
 - (void)doInitialize {
     NSLog(@"Init finish");

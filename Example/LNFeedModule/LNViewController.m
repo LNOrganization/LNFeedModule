@@ -7,6 +7,7 @@
 //
 
 #import "LNViewController.h"
+#import <LNModuleCore/LNModuleCore.h>
 #import <LNModuleProtocol/LNFeedModuleProtocol.h>
 
 @interface LNViewController ()
@@ -18,6 +19,9 @@
 - (void)viewDidLoad
 {
     [super viewDidLoad];
+    
+    self.edgesForExtendedLayout = UIRectEdgeNone;
+    self.view.backgroundColor = [UIColor whiteColor];
 	// Do any additional setup after loading the view, typically from a nib.
 }
 
@@ -29,7 +33,7 @@
 - (void)showFeed
 {
     id<LNFeedModuleProtocol> feedModule = (id)[[LNModuleManager sharedInstance] impInstanceForProtocol:@protocol(LNFeedModuleProtocol)];
-    UIViewController *feedVc = [feedModule getRecommendFeedViewController];
+    UIViewController *feedVc = [feedModule getMainFeedViewController];
     [self.navigationController pushViewController:feedVc animated:YES];
 //    [self presentViewController:feedVc animated:YES completion:nil];
 }

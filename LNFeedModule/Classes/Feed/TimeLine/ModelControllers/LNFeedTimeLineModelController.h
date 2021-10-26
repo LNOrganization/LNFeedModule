@@ -1,5 +1,5 @@
 //
-//  LNRecommendListModelController.h
+//  LNFeedTimeLineModelController.h
 //  ArchitectureDesign
 //
 //  Created by Lenny on 2021/8/30.
@@ -9,7 +9,7 @@
 
 NS_ASSUME_NONNULL_BEGIN
 
-@interface LNRecommendListModelController : LNBaseListModelController
+@interface LNFeedTimeLineModelController : LNBaseListModelController
 
 @end
 

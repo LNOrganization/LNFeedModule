@@ -8,7 +8,7 @@
 
 Pod::Spec.new do |s|
   s.name             = 'LNFeedModule'
-  s.version          = '0.1.1'
+  s.version          = '0.1.2'
   s.summary          = 'Feed流模块.'
 
 # This description is used to generate tags and improve search results.
@@ -38,11 +38,6 @@ Pod::Spec.new do |s|
     uikit.public_header_files = 'LNFeed/Classes/UIKit/*.h'
   end
   
-  s.subspec 'Router' do |router|
-    router.source_files = 'LNFeedModule/Classes/Router/**/*'
-    router.public_header_files = 'LNFeedModule/Classes/Router/*.h'
-  end
-  
   s.subspec 'Common' do |common|
     common.source_files = 'LNFeedModule/Classes/Common/**/*'
     common.public_header_files = 'LNFeedModule/Classes/Common/*.h'
@@ -53,7 +48,6 @@ Pod::Spec.new do |s|
     base.public_header_files = 'LNFeedModule/Classes/Base/*.h'
     # 自有subspec
     base.dependency 'LNFeedModule/UIKit'
-    base.dependency 'LNFeedModule/Router'
     base.dependency 'LNFeedModule/Common'
     # 公有库
     base.dependency 'MJRefresh'
@@ -61,8 +55,11 @@ Pod::Spec.new do |s|
   end
   
   s.subspec 'Feed' do |feed|
-    feed.source_files = 'LNFeedModule/Classes/Feed/**/*'
+    feed.source_files = 'LNFeedModule/Classes/Feed/**/*.{h,m}'
     feed.public_header_files = 'LNFeedModule/Classes/Feed/*.h'
+    s.resource_bundles = {
+      'LNFeedModule_Feed' => ['LNFeedModule/Classes/Feed/**/*.xib']
+    }
     feed.subspec 'BaseFeed' do |base|
       base.source_files = 'LNFeedModule/Classes/Feed/BaseFeed/**/*'
       base.public_header_files = 'LNFeed/Classes/Feed/BaseFeed/*.h'
@@ -97,17 +94,18 @@ Pod::Spec.new do |s|
   
   s.subspec 'Mediator' do |mediator|
     mediator.source_files = 'LNFeedModule/Classes/Mediator/**/*'
-    mediator.dependency 'LNFeedModule/Router'
     mediator.dependency 'LNFeedModule/Feed'
     mediator.dependency 'LNFeedModule/Topic'
   end
   
-  s.dependency 'LNModuleProtocol'
-  s.dependency 'LNModuleCore'
+  s.dependency 'LNModuleProtocol', '~>0.1.3'
+  s.dependency 'LNModuleCore', '~>0.1.6'
+  s.dependency 'LNCommonKit'
+  
 
-  # s.resource_bundles = {
-  #   'LNFeed' => ['LNFeed/Assets/*.png']
-  # }
+#   s.resource_bundles = {
+#     'LNFeed' => ['LNFeed/Assets/*.png']
+#   }
 
   # s.public_header_files = 'Pod/Classes/**/*.h'
   # s.frameworks = 'UIKit', 'MapKit'
