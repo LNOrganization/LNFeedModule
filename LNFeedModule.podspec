@@ -120,8 +120,7 @@ Pod::Spec.new do |s|
     mediator.dependency 'LNFeedModule/Like'
   end
   
-  s.dependency 'LNModuleProtocol', '~>0.1.3'
-  s.dependency 'LNModuleCore', '~>0.1.6'
+  s.dependency 'LNModuleProtocol', '~>0.1.4'
   s.dependency 'LNCommonKit'
   
 

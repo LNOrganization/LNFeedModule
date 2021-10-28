@@ -7,11 +7,10 @@
 
 #import "LNFeedModule.h"
 #import "LNFeedModelConfig.h"
-//#import "LNFeedMediatorDelegate.h"
 #import <LNModuleProtocol/LNFeedModuleProtocol.h>
 #import <LNModuleCore/LNModuleCore.h>
 
-//注册类型和协议名称
+//注册类名和协议名称
 __attribute__((constructor)) void addModulLNFeedModule(void){
     static dispatch_once_t onceToken;
     dispatch_once(&onceToken, ^{
