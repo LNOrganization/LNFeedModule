@@ -54,10 +54,6 @@ Pod::Spec.new do |s|
     base.dependency 'LNFeedModule/CustomUIKit'
     base.dependency 'LNFeedModule/Common'
     base.dependency 'LNFeedModule/Network'
-#    # 公有库
-#    base.dependency 'MJRefresh'
-#    base.dependency 'SDWebImage'
-#    base.dependency 'AFNetworking'
     
   end
   
@@ -65,7 +61,7 @@ Pod::Spec.new do |s|
     feature.source_files = 'LNFeedModule/Classes/Feature/**/*.{h,m}'
     feature.public_header_files = 'LNFeedModule/Classes/Feature/**/*.h'
     feature.resource_bundles = {
-      'LNFeedModule' => ['LNFeedModule/Classes/Feature/**/*.xib', 'LNFeedModule/Classes/**/*.{png,jpg,jpeg}']
+      'LNFeedModule' => ['LNFeedModule/Classes/Feature/**/*.xib']
     }
     feature.dependency 'LNFeedModule/Base'
   end
