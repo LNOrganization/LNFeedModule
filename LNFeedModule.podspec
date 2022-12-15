@@ -33,91 +33,46 @@ Pod::Spec.new do |s|
   s.source_files =  'LNFeedModule/Classes/*'
   s.public_header_files = 'LNFeedModule/Classes/*.h'
   
-  s.subspec 'UIKit' do |uikit|
-    uikit.source_files = 'LNFeedModule/Classes/UIKit/**/*'
-    uikit.public_header_files = 'LNFeed/Classes/UIKit/*.h'
+  s.subspec 'Network' do |network|
+    network.source_files = 'LNFeedModule/Classes/Network/**/*'
+    network.public_header_files = 'LNFeedModule/Classes/Network/*.h'
   end
-  
   s.subspec 'Common' do |common|
     common.source_files = 'LNFeedModule/Classes/Common/**/*'
     common.public_header_files = 'LNFeedModule/Classes/Common/*.h'
+  end
+  
+  s.subspec 'CustomUIKit' do |uikit|
+    uikit.source_files = 'LNFeedModule/Classes/CustomUIKit/**/*'
+    uikit.public_header_files = 'LNFeed/Classes/CustomUIKit/*.h'
   end
   
   s.subspec 'Base' do |base|
     base.source_files = 'LNFeedModule/Classes/Base/**/*'
     base.public_header_files = 'LNFeedModule/Classes/Base/*.h'
     # 自有subspec
-    base.dependency 'LNFeedModule/UIKit'
+    base.dependency 'LNFeedModule/CustomUIKit'
     base.dependency 'LNFeedModule/Common'
+    base.dependency 'LNFeedModule/Network'
     # 公有库
     base.dependency 'MJRefresh'
     base.dependency 'SDWebImage'
+    base.dependency 'AFNetworking'
+    
   end
   
-  s.subspec 'Feed' do |feed|
-    feed.source_files = 'LNFeedModule/Classes/Feed/**/*.{h,m}'
-    feed.public_header_files = 'LNFeedModule/Classes/Feed/*.h'
-    s.resource_bundles = {
-      'LNFeedModule_Feed' => ['LNFeedModule/Classes/Feed/**/*.xib']
+  s.subspec 'Feature' do |feature|
+    feature.source_files = 'LNFeedModule/Classes/Feature/**/*.{h,m}'
+    feature.public_header_files = 'LNFeedModule/Classes/Feature/**/*.h'
+    feature.resource_bundles = {
+      'LNFeedModule' => ['LNFeedModule/Classes/Feature/**/*.xib', 'LNFeedModule/Classes/**/*.{png,jpg,jpeg}']
     }
-    feed.subspec 'BaseFeed' do |base|
-      base.source_files = 'LNFeedModule/Classes/Feed/BaseFeed/**/*'
-      base.public_header_files = 'LNFeed/Classes/Feed/BaseFeed/*.h'
-      base.dependency 'LNFeedModule/Base'
-      base.dependency 'LNFeedModule/Topic'
-      base.dependency 'LNFeedModule/Comment'
-      base.dependency 'LNFeedModule/Like'
-    end
-    
-    feed.subspec 'FeedDetail' do |detail|
-      detail.source_files = 'LNFeedModule/Classes/Feed/FeedDetail/**/*'
-      detail.public_header_files = 'LNFeedModule/Classes/Feed/FeedDetail/*.h'
-      detail.dependency 'LNFeedModule/Feed/BaseFeed'
-    end
-    
-    feed.subspec 'TopicFeed' do |topicfeed|
-      topicfeed.source_files = 'LNFeedModule/Classes/Feed/TopicFeed/**/*'
-      topicfeed.public_header_files = 'LNFeedModule/Classes/Feed/TopicFeed/*.h'
-      topicfeed.dependency 'LNFeedModule/Feed/BaseFeed'
-    end
-    
-    feed.subspec 'Recommend' do |recommend|
-      recommend.source_files = 'LNFeedModule/Classes/Feed/Recommend/**/*'
-      recommend.public_header_files = 'LNFeedModule/Classes/Feed/Recommend/*.h'
-      recommend.dependency 'LNFeedModule/Feed/BaseFeed'
-    end
-    
-    feed.subspec 'TimeLine' do |timeLine|
-      timeLine.source_files = 'LNFeedModule/Classes/Feed/TimeLine/**/*'
-      timeLine.public_header_files = 'LNFeedModule/Classes/Feed/TimeLine/*.h'
-      timeLine.dependency 'LNFeedModule/Feed/BaseFeed'
-    end
-  end
-  
-  s.subspec 'Topic' do |topic|
-    topic.source_files = 'LNFeedModule/Classes/Topic/**/*'
-    topic.public_header_files = 'LNFeedModule/Classes/Topic/*.h'
-    topic.dependency 'LNFeedModule/Base'
-  end
-  
-  s.subspec 'Like' do |like|
-    like.source_files = 'LNFeedModule/Classes/Like/**/*'
-    like.public_header_files = 'LNFeedModule/Classes/Like/*.h'
-    like.dependency 'LNFeedModule/Base'
-  end
-  
-  s.subspec 'Comment' do |comment|
-    comment.source_files = 'LNFeedModule/Classes/Comment/**/*'
-    comment.public_header_files = 'LNFeedModule/Classes/Comment/*.h'
-    comment.dependency 'LNFeedModule/Base'
+    feature.dependency 'LNFeedModule/Base'
   end
   
   s.subspec 'Mediator' do |mediator|
     mediator.source_files = 'LNFeedModule/Classes/Mediator/**/*'
-    mediator.dependency 'LNFeedModule/Feed'
-    mediator.dependency 'LNFeedModule/Topic'
-    mediator.dependency 'LNFeedModule/Comment'
-    mediator.dependency 'LNFeedModule/Like'
+    mediator.dependency 'LNFeedModule/Feature'
   end
   
   s.dependency 'LNModuleProtocol', '~>0.1.4'
