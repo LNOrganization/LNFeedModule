@@ -23,6 +23,9 @@
 		71719F9F1E33DC2100824A3D /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 71719F9D1E33DC2100824A3D /* LaunchScreen.storyboard */; };
 		873B8AEB1B1F5CCA007FD442 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 873B8AEA1B1F5CCA007FD442 /* Main.storyboard */; };
 		B81407782727ECC5006FF84E /* LNTabBarViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = B81407772727ECC5006FF84E /* LNTabBarViewController.m */; };
+		B84ECE0F294AE2A800FB57CA /* pod_release.sh in Resources */ = {isa = PBXBuildFile; fileRef = B84ECE0C294AE2A800FB57CA /* pod_release.sh */; };
+		B84ECE10294AE2A800FB57CA /* pod_local_check.sh in Resources */ = {isa = PBXBuildFile; fileRef = B84ECE0D294AE2A800FB57CA /* pod_local_check.sh */; };
+		B84ECE11294AE2A800FB57CA /* pod_remote_check.sh in Resources */ = {isa = PBXBuildFile; fileRef = B84ECE0E294AE2A800FB57CA /* pod_remote_check.sh */; };
 		C1C4C36C828A471B85DFDDDA /* Pods_LNFeedModule_Tests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = AC9ECF8D40FA28AC81FFA612 /* Pods_LNFeedModule_Tests.framework */; };
 		E4016F38BA98C76DE935015D /* Pods_LNFeedModule_Example.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 787EE281D785A8FF398BCFB8 /* Pods_LNFeedModule_Example.framework */; };
 /* End PBXBuildFile section */
@@ -68,6 +71,9 @@
 		AC9ECF8D40FA28AC81FFA612 /* Pods_LNFeedModule_Tests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_LNFeedModule_Tests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		B81407762727ECC5006FF84E /* LNTabBarViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = LNTabBarViewController.h; sourceTree = "<group>"; };
 		B81407772727ECC5006FF84E /* LNTabBarViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = LNTabBarViewController.m; sourceTree = "<group>"; };
+		B84ECE0C294AE2A800FB57CA /* pod_release.sh */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.script.sh; path = pod_release.sh; sourceTree = "<group>"; };
+		B84ECE0D294AE2A800FB57CA /* pod_local_check.sh */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.script.sh; path = pod_local_check.sh; sourceTree = "<group>"; };
+		B84ECE0E294AE2A800FB57CA /* pod_remote_check.sh */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.script.sh; path = pod_remote_check.sh; sourceTree = "<group>"; };
 		D63752394AB94D93AB1952E3 /* LICENSE */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text; name = LICENSE; path = ../LICENSE; sourceTree = "<group>"; };
 		DD205AEDB49A46D684AF422B /* Pods-LNFeedModule_Example.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-LNFeedModule_Example.debug.xcconfig"; path = "Target Support Files/Pods-LNFeedModule_Example/Pods-LNFeedModule_Example.debug.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -101,6 +107,7 @@
 		6003F581195388D10070C39A = {
 			isa = PBXGroup;
 			children = (
+				B84ECE0B294AE2A800FB57CA /* pod_script */,
 				60FF7A9C1954A5C5007DD14C /* Podspec Metadata */,
 				6003F593195388D20070C39A /* Example for LNFeedModule */,
 				6003F5B5195388D20070C39A /* Tests */,
@@ -190,6 +197,17 @@
 			name = "Podspec Metadata";
 			sourceTree = "<group>";
 		};
+		B84ECE0B294AE2A800FB57CA /* pod_script */ = {
+			isa = PBXGroup;
+			children = (
+				B84ECE0C294AE2A800FB57CA /* pod_release.sh */,
+				B84ECE0D294AE2A800FB57CA /* pod_local_check.sh */,
+				B84ECE0E294AE2A800FB57CA /* pod_remote_check.sh */,
+			);
+			name = pod_script;
+			path = ../pod_script;
+			sourceTree = "<group>";
+		};
 		D3E5097256FD53C80E04DC03 /* Pods */ = {
 			isa = PBXGroup;
 			children = (
@@ -252,6 +270,9 @@
 				LastUpgradeCheck = 0720;
 				ORGANIZATIONNAME = dongjianxiong;
 				TargetAttributes = {
+					6003F589195388D20070C39A = {
+						DevelopmentTeam = M3UYE69NKU;
+					};
 					6003F5AD195388D20070C39A = {
 						TestTargetID = 6003F589195388D20070C39A;
 					};
@@ -282,6 +303,9 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				B84ECE0F294AE2A800FB57CA /* pod_release.sh in Resources */,
+				B84ECE10294AE2A800FB57CA /* pod_local_check.sh in Resources */,
+				B84ECE11294AE2A800FB57CA /* pod_remote_check.sh in Resources */,
 				873B8AEB1B1F5CCA007FD442 /* Main.storyboard in Resources */,
 				71719F9F1E33DC2100824A3D /* LaunchScreen.storyboard in Resources */,
 				6003F5A9195388D20070C39A /* Images.xcassets in Resources */,
@@ -330,26 +354,32 @@
 			inputPaths = (
 				"${PODS_ROOT}/Target Support Files/Pods-LNFeedModule_Example/Pods-LNFeedModule_Example-frameworks.sh",
 				"${BUILT_PRODUCTS_DIR}/AFNetworking/AFNetworking.framework",
+				"${BUILT_PRODUCTS_DIR}/Aspects/Aspects.framework",
+				"${BUILT_PRODUCTS_DIR}/CocoaAsyncSocket/CocoaAsyncSocket.framework",
+				"${BUILT_PRODUCTS_DIR}/JSONModel/JSONModel.framework",
 				"${BUILT_PRODUCTS_DIR}/LNAccountModule/LNAccountModule.framework",
 				"${BUILT_PRODUCTS_DIR}/LNCommonKit/LNCommonKit.framework",
 				"${BUILT_PRODUCTS_DIR}/LNFeedModule/LNFeedModule.framework",
 				"${BUILT_PRODUCTS_DIR}/LNModuleCore/LNModuleCore.framework",
 				"${BUILT_PRODUCTS_DIR}/LNModuleProtocol/LNModuleProtocol.framework",
 				"${BUILT_PRODUCTS_DIR}/MJRefresh/MJRefresh.framework",
+				"${BUILT_PRODUCTS_DIR}/Masonry/Masonry.framework",
 				"${BUILT_PRODUCTS_DIR}/SDWebImage/SDWebImage.framework",
-				"${BUILT_PRODUCTS_DIR}/YYKit/YYKit.framework",
 			);
 			name = "[CP] Embed Pods Frameworks";
 			outputPaths = (
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/AFNetworking.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Aspects.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/CocoaAsyncSocket.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/JSONModel.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/LNAccountModule.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/LNCommonKit.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/LNFeedModule.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/LNModuleCore.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/LNModuleProtocol.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/MJRefresh.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Masonry.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/SDWebImage.framework",
-				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/YYKit.framework",
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
@@ -516,6 +546,7 @@
 			baseConfigurationReference = DD205AEDB49A46D684AF422B /* Pods-LNFeedModule_Example.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				DEVELOPMENT_TEAM = M3UYE69NKU;
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "LNFeedModule/LNFeedModule-Prefix.pch";
 				INFOPLIST_FILE = "LNFeedModule/LNFeedModule-Info.plist";
@@ -532,6 +563,7 @@
 			baseConfigurationReference = 681F90D4EFA03882C97F8F5F /* Pods-LNFeedModule_Example.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				DEVELOPMENT_TEAM = M3UYE69NKU;
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "LNFeedModule/LNFeedModule-Prefix.pch";
 				INFOPLIST_FILE = "LNFeedModule/LNFeedModule-Info.plist";

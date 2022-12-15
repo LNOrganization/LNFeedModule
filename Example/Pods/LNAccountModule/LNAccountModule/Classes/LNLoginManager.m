@@ -6,31 +6,50 @@
 //
 
 #import "LNLoginManager.h"
-#import <LNModuleCore/LNModuleCore.h>
 #import <LNCommonKit/LNCommonKit.h>
 #import <LNModuleProtocol/LNAccountModuleProtocol.h>
+#import <LNModuleCore/LNModuleCore.h>
+
 #import "LNLoginViewController.h"
 #import "LNAccountModuleConfig.h"
 
 #define kLNLoginAccount @"LNModuleCacheState"
 
-NSString * const LNAccountLoginSucceedNotification = @"kLNAccountLoginSucceedNotification";
-NSString * const LNAccountLogoutFinishNotification = @"kLNAccountLogoutFinishNotification";
-
 
 __attribute__((constructor)) void addModuleAccountModule(void){
+    [[LNModuleManager sharedInstance] addImpClassName:@"LNLoginManager" protocolName:@"LNAccountModuleProtocol"];
     
-    static dispatch_once_t onceToken;
-    dispatch_once(&onceToken, ^{
-        [[LNModuleManager sharedInstance] addImpClassName:@"LNLoginManager" protocolName:@"LNAccountModuleProtocol"];
-    });
+//    static dispatch_once_t onceToken;
+//    dispatch_once(&onceToken, ^{
+////        [[LNModuleManager sharedInstance] addImpClassName:@"LNLoginManager" protocolName:@"LNAccountModuleProtocol"];
+//    });
 }
+
+
+//@interface LNObserverLink : NSObject
+//
+//@property(nonatomic, weak) id block;
+//@property(nonatomic, weak) id observer;
+//
+//@property(nonatomic, strong) LNObserverLink *next;
+//
+//@end
+//
+//@implementation LNObserverLink
+//
+//@end
+
 
 @interface LNLoginManager ()<LNAccountModuleProtocol>
 
-@property(nonatomic, strong) LNSafeMutableDictionary *loginNotifications;
+/** 登录通知回调，key:observer, value:LNLoginBlock */
+@property(nonatomic, strong) LNMapTable *loginNotifications;
 
-@property(nonatomic, strong) LNSafeMutableDictionary *logoutNotifications;
+/** 登出通知回调，key:observer, value:LNLogoutBlock */
+@property(nonatomic, strong) LNMapTable *logoutNotifications;
+
+//@property(nonatomic, strong) LNObserverLink *loginLink;
+//@property(nonatomic, strong) LNObserverLink *logoutLink;
 
 @end
 
@@ -51,9 +70,15 @@ __attribute__((constructor)) void addModuleAccountModule(void){
 {
     self = [super init];
     if (self) {
-        _loginNotifications = [[LNSafeMutableDictionary alloc] init];
-        _logoutNotifications = [[LNSafeMutableDictionary alloc] init];
-        [NSMapTable alloc];
+        
+        // NSPointerFunctionsWeakMemory weak引用observer，不持有，对象销毁时自动注销LNLoginBlock
+        _loginNotifications = [[LNMapTable alloc] initWithKeyOptions:NSPointerFunctionsWeakMemory
+                                                        valueOptions:NSPointerFunctionsCopyIn
+                                                            capacity:0];
+        // NSPointerFunctionsWeakMemory weak引用observer，不持有，对象销毁时自动注销LNLogoutBlock
+        _logoutNotifications = [[LNMapTable alloc] initWithKeyOptions:NSPointerFunctionsWeakMemory
+                                                         valueOptions:NSPointerFunctionsCopyIn
+                                                             capacity:0];;
     }
     return self;
 }
@@ -81,12 +106,12 @@ __attribute__((constructor)) void addModuleAccountModule(void){
     return [[NSUserDefaults standardUserDefaults] valueForKey:kLNLoginAccount] != nil;
 }
 
-- (void)getAccountInfo:(LNLoginCompletion)completion {
+- (void)getAccountInfo:(LNLoginBlock)completion {
     
 }
 
 
-- (BOOL)loginIfNeed:(LNLoginCompletion)completion {
+- (BOOL)loginIfNeed:(LNLoginBlock)completion {
     if ([self isLogin]) {
         return YES;
     }else{
@@ -99,39 +124,33 @@ __attribute__((constructor)) void addModuleAccountModule(void){
 - (void)logout {
     [[NSUserDefaults standardUserDefaults] setValue:nil forKey:kLNLoginAccount];
     [[NSUserDefaults standardUserDefaults] synchronize];
-    [[NSNotificationCenter defaultCenter] postNotificationName:LNAccountLogoutFinishNotification object:nil];
-    [[self.logoutNotifications copy] enumerateKeysAndObjectsUsingBlock:^(id  _Nonnull key, LNLogotCompletion  _Nonnull obj, BOOL * _Nonnull stop) {
-        obj();
+    [[NSNotificationCenter defaultCenter] postNotificationName:LNAccountLogoutNotification object:nil];
+    [[self.logoutNotifications objectEnumerator].allObjects enumerateObjectsUsingBlock:^(LNLogoutBlock  _Nonnull block, NSUInteger idx, BOOL * _Nonnull stop) {
+        block();
     }];
+//    [[self.logoutNotifications copy] enumerateKeysAndObjectsUsingBlock:^(id  _Nonnull key, LNLogoutCompletion  _Nonnull obj, BOOL * _Nonnull stop) {
+//        obj();
+//    }];
+    
 }
 
-- (void)registerLoginCompletionNotify:(LNLoginCompletion)completion forKey:(NSString *)key {
-    if (key && completion && ![self.loginNotifications objectForKey:key]) {
-        [self.loginNotifications setObject:completion forKey:key];
-    }
-}
-
-- (void)removeLoginNotificationForKey:(NSString *)key
+- (void)addObserver:(id)observer forLoginBlock:(LNLoginBlock)block
 {
-    if (key && [self.loginNotifications objectForKey:key]) {
-        [self.loginNotifications removeObjectForKey:key];
-    }
+    [self.loginNotifications setObject:block forKey:observer];
 }
 
-- (void)registerLogoutCompletionNotify:(LNLogotCompletion)completion forKey:(NSString *)key {
-    if (key && completion && ![self.loginNotifications objectForKey:key]) {
-        [self.logoutNotifications setObject:completion forKey:key];
-    }
-}
-
-- (void)removeLogoutNotificationForKey:(NSString *)key
+- (void)addObserver:(id)observer forLogoutBlock:(LNLogoutBlock)block
 {
-    if (key && [self.loginNotifications objectForKey:key]) {
-        [self.logoutNotifications removeObjectForKey:key];
-    }
+    [self.logoutNotifications setObject:block forKey:observer];
 }
 
-- (void)showLoginViewControllerWithCompletion:(LNLoginCompletion)completion
+- (NSDictionary *)getLoginUserInfo {
+    return nil;
+}
+
+
+
+- (void)showLoginViewControllerWithCompletion:(LNLoginBlock)completion
 {
     NSBundle *bundle = [NSBundle bundleForClass:[self class]];
     NSString *realBundlePath = [NSString stringWithFormat:@"%@/%@",bundle.bundlePath,@"LNAccountModule.bundle"];
@@ -146,14 +165,14 @@ __attribute__((constructor)) void addModuleAccountModule(void){
         if (!error && accountInfo) {
             [[NSUserDefaults standardUserDefaults] setValue:accountInfo forKey:kLNLoginAccount];
             [[NSUserDefaults standardUserDefaults] synchronize];
-            [[NSNotificationCenter defaultCenter] postNotificationName:LNAccountLoginSucceedNotification object:nil userInfo:accountInfo];
+            [[NSNotificationCenter defaultCenter] postNotificationName:LNAccountLoginNotification object:nil userInfo:accountInfo];
         }
         [strongLoginVc dismissViewControllerAnimated:YES completion:^{
             if (completion) {
-                completion(accountInfo, error.description);
+                completion(accountInfo, error);
             }
-            [[weakSelf.loginNotifications copy] enumerateKeysAndObjectsUsingBlock:^(id  _Nonnull key, LNLoginCompletion  _Nonnull obj, BOOL * _Nonnull stop) {
-                obj(accountInfo, error.description);
+            [[weakSelf.loginNotifications objectEnumerator].allObjects enumerateObjectsUsingBlock:^(LNLoginBlock  _Nonnull block, NSUInteger idx, BOOL * _Nonnull stop) {
+                block(accountInfo, error);
             }];
         }];
     };

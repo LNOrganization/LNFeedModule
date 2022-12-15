@@ -50,14 +50,14 @@ Pod::Spec.new do |s|
   s.subspec 'Base' do |base|
     base.source_files = 'LNFeedModule/Classes/Base/**/*'
     base.public_header_files = 'LNFeedModule/Classes/Base/*.h'
-    # 自有subspec
+    # subspec依赖
     base.dependency 'LNFeedModule/CustomUIKit'
     base.dependency 'LNFeedModule/Common'
     base.dependency 'LNFeedModule/Network'
-    # 公有库
-    base.dependency 'MJRefresh'
-    base.dependency 'SDWebImage'
-    base.dependency 'AFNetworking'
+#    # 公有库
+#    base.dependency 'MJRefresh'
+#    base.dependency 'SDWebImage'
+#    base.dependency 'AFNetworking'
     
   end
   
@@ -75,8 +75,8 @@ Pod::Spec.new do |s|
     mediator.dependency 'LNFeedModule/Feature'
   end
   
-  s.dependency 'LNModuleProtocol', '~>0.1.4'
-  s.dependency 'LNCommonKit'
+  s.dependency 'LNModuleProtocol', '0.1.5'
+  s.dependency 'LNCommonKit', '0.1.8'
   
 
 #   s.resource_bundles = {

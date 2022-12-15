@@ -10,25 +10,35 @@
 
 @implementation UIViewController (Router)
 
-- (UIViewController *)topViewController:(UIViewController *)vc {
+- (UIViewController *)ln_topViewController:(UIViewController *)vc {
     return [LNRouter topViewController:vc];
 }
 
-- (UIViewController *)currentViewController {
-    UIViewController *vc = [self topViewController:self];
+- (UIViewController *)ln_currentViewController {
+    UIViewController *vc = [self ln_topViewController:self];
     return vc;
 }
 
-- (void)pushToViewControll:(UIViewController *)viewController
+- (void)ln_pushViewController:(UIViewController *)viewController
 {
-    if (self.navigationController) {
-        [self.navigationController pushViewController:viewController animated:YES];
-    }
+    [self ln_pushViewController:viewController animated:YES];
 }
 
-- (void)showViewControll:(UIViewController *)viewController
+- (void)ln_pushViewController:(UIViewController *)viewController
+                     animated: (BOOL)animated
 {
-    [LNRouter showFromViewController:self toViewControll:viewController];
+    [LNRouter pushViewController:viewController animated:animated];
 }
 
+- (void)ln_presentViewController:(UIViewController *)viewController
+{
+    [self ln_presentViewController:viewController animated:YES completion:nil];
+}
+
+- (void)ln_presentViewController:(UIViewController *)viewController
+                         animated: (BOOL)animated
+                       completion:(void (^ __nullable)(void))completion
+{
+    [LNRouter presentFromViewController:self toViewController:viewController animated:animated completion:completion];
+}
 @end
