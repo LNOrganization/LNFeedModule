@@ -29,7 +29,7 @@
 
 - (UIViewController *)createFeedTimeLineVC;
 
-- (UIViewController *)createFeedFoucusVC;
+- (UIViewController *)createFeedFocusVC;
 
 - (UIViewController *)createTopicFeedListVCWithTopic:(LNTopic *)topic;
 

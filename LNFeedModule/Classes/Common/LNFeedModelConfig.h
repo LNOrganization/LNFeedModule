@@ -20,7 +20,7 @@ NS_ASSUME_NONNULL_BEGIN
 
 +(NSBundle *)feedBundle;
 
-+(id<LNAccountModuleProtocol>)acccountDelegate;
++(id<LNAccountModuleProtocol>)accountDelegate;
 
 @end
 

@@ -9,5 +9,4 @@
 
 @implementation LNFeedModule (AppDelegate)
 
-
 @end

@@ -23,12 +23,12 @@
 +(NSBundle *)feedBundle
 {
     NSBundle *bundle = [NSBundle bundleForClass:[self class]];
-    NSString *feedBundlePath = [bundle.resourcePath stringByAppendingPathComponent:@"LNFeedModule_Feed.bundle"];
+    NSString *feedBundlePath = [bundle.resourcePath stringByAppendingPathComponent:@"LNFeedModule.bundle"];
     NSBundle *feedBundle = [NSBundle bundleWithPath:feedBundlePath];
     return feedBundle;
 }
 
-+(id<LNAccountModuleProtocol>)acccountDelegate
++(id<LNAccountModuleProtocol>)accountDelegate
 {
     id<LNAccountModuleProtocol> accountModule = [[LNModuleManager sharedInstance] impInstanceForProtocol:@protocol(LNAccountModuleProtocol)];
     return accountModule;

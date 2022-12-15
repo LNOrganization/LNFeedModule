@@ -26,6 +26,7 @@
 #import "LNFeedMediatorDelegate.h"
 #import "LNFeedModelConfig.h"
 #import "LNFeedMainViewController.h"
+#import "LNBaseFeedListModelController.h"
 #import "LNFeedModelController.h"
 #import "LNFeed.h"
 #import "LNUser.h"

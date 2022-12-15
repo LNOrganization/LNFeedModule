@@ -10,14 +10,13 @@
 
 #import "LNTopicFeedTableViewController.h"
 #import "LNFeedDetailViewController.h"
-#import "LNFeedRecommendViewController.h"
+#import "LNFeedRecommendListController.h"
 #import "LNFeedTimeLineViewController.h"
 #import "LNFeedDetailViewController.h"
 #import "LNFeedMainViewController.h"
-
-#import "LNFeedTopicTableViewController.h"
-#import "LBFeedComentViewController.h"
-#import "LBFeedLikeTableViewController.h"
+#import "LNTopicFeedTableViewController.h"
+#import "LNFeedComentViewController.h"
+#import "LNFeedLikeTableViewController.h"
 
 @interface LNFeedMediator ()
 
@@ -42,8 +41,8 @@
 }
 
 - (UIViewController *)createFeedRecommendVC {
-    LNFeedRecommendViewController *userVC = [[LNFeedRecommendViewController alloc] init];
-    return userVC;
+    LNFeedRecommendListController *vc = [[LNFeedRecommendListController alloc] init];
+    return vc;
 }
 
 - (UIViewController *)createFeedTimeLineVC {
@@ -51,7 +50,7 @@
     return feedVc;
 }
 
-- (UIViewController *)createFeedFoucusVC {
+- (UIViewController *)createFeedFocusVC {
     LNFeedTimeLineViewController*feedVc = [[LNFeedTimeLineViewController alloc] init];
     return feedVc;
 }
@@ -86,95 +85,26 @@
 }
 
 - (UIViewController *)createTopicVC {
-    LNFeedTopicTableViewController *topicVc = [[LNFeedTopicTableViewController alloc] init];
+    LNTopicFeedTableViewController *topicVc = [[LNTopicFeedTableViewController alloc] init];
     return topicVc;
 }
 
 
 - (UIViewController *)createTopicTableVCWithFeed:(LNFeed *)feed
 {
-    LNFeedTopicTableViewController *topicVc = [[LNFeedTopicTableViewController alloc] init];
+    LNTopicFeedTableViewController *topicVc = [[LNTopicFeedTableViewController alloc] init];
     return topicVc;
 }
 
 - (UIViewController *)createCommentVCWithFeed:(LNFeed *)feed {
-    LBFeedComentViewController *commentVc = [[LBFeedComentViewController alloc] init];
+    LNFeedComentViewController *commentVc = [[LNFeedComentViewController alloc] init];
     return commentVc;
 }
 
 - (UIViewController *)createLikeTableVC {
-    LBFeedLikeTableViewController *likeVc = [[LBFeedLikeTableViewController alloc] init];
+    LNFeedLikeTableViewController *likeVc = [[LNFeedLikeTableViewController alloc] init];
     return likeVc;
 }
 
-
-//#pragma mark -
-//- (UIViewController *)topViewController:(UIViewController *)vc {
-//    if (!vc) {
-//        return [self topViewController:[UIApplication sharedApplication].keyWindow.rootViewController];
-//    }
-//    else if (vc.presentedViewController) {
-//        return [self topViewController:vc.presentedViewController];
-//    } else if ([vc isKindOfClass:[UISplitViewController class]]) {
-//        UISplitViewController *svc = (UISplitViewController*)vc;
-//        if (svc.viewControllers.count > 0) {
-//            return [self topViewController:svc.viewControllers.lastObject];
-//        } else {
-//            return vc;
-//        }
-//    } else if ([vc isKindOfClass:[UINavigationController class]]) {
-//        UINavigationController *navC = (UINavigationController*)vc;
-//        if (navC.viewControllers.count > 0) {
-//            return [self topViewController:navC.topViewController];
-//        } else {
-//            return vc;
-//        }
-//    } else if ([vc isKindOfClass:[UITabBarController class]]) {
-//        UITabBarController *tabC = (UITabBarController*)vc;
-//        if (tabC.viewControllers.count > 0) {
-//            return [self topViewController:tabC.selectedViewController];
-//        } else {
-//            return vc;
-//        }
-//    } else {
-//        return vc;
-//    }
-//}
-//
-//- (UIViewController *)currentViewController {
-//    UIViewController *vc = [self topViewController:nil];
-//    return vc;
-//}
-//
-//- (void)pushToViewControll:(UIViewController *)viewController
-//{
-//    UIViewController *currentVc = [self currentViewController];
-//    if (currentVc.navigationController) {
-//        [currentVc.navigationController pushViewController:viewController animated:YES];
-//    }else{
-//        [currentVc presentViewController:viewController animated:YES completion:nil];
-//    }
-//}
-
-//- (void)showFeedDetailVcWithFeed:(LNFeed *)feed {
-//    LNFeedDetailViewController *userVC = [[LNFeedDetailViewController alloc] init];
-//    [LNRouter pushToViewControll:userVC];
-//}
-//
-//- (void)showTopicFeedListVcWithTopic:(LNTopic *)topic {
-//    LNTopicFeedTableViewController *topicFeedVc = [[LNTopicFeedTableViewController alloc] init];
-//    topicFeedVc.topic = topic;
-//    [LNRouter pushToViewControll:topicFeedVc];
-//}
-//
-//- (void)showUserCenterVcWithUser:(LNUser *)user {
-//    LNFeedDetailViewController *userVC = [[LNFeedDetailViewController alloc] init];
-//    [LNRouter pushToViewControll:userVC];
-//}
-//
-//- (void)showTopicVc {
-//    LNFeedTopicTableViewController *topicVC = [[LNFeedTopicTableViewController alloc] init];
-//    [LNRouter pushToViewControll:topicVC];
-//}
 
 @end

@@ -45,11 +45,20 @@
 
 + (void)pushToViewControll:(UIViewController *)viewController
 {
-    UIViewController *currentViewController = [UIApplication sharedApplication].keyWindow.rootViewController;
+    UIViewController *currentViewController = [self currentViewController];
     if (currentViewController.navigationController) {
         [currentViewController.navigationController pushViewController:viewController animated:YES];
+    }
+}
+
++ (void)showFromViewController:(UIViewController *)fromViewController
+                toViewControll:(UIViewController *)toViewController
+{
+    UIViewController *currentViewController = [self topViewController:fromViewController];
+    if (currentViewController.navigationController) {
+        [currentViewController.navigationController pushViewController:toViewController animated:YES];
     }else{
-        [currentViewController presentViewController:viewController animated:YES completion:nil];
+        [currentViewController presentViewController:toViewController animated:YES completion:nil];
     }
 }
 

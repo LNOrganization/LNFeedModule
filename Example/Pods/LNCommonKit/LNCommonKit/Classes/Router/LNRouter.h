@@ -18,6 +18,10 @@ NS_ASSUME_NONNULL_BEGIN
 
 + (void)pushToViewControll:(UIViewController *)viewController;
 
++ (void)showViewControll:(UIViewController *)viewController;
+
++ (void)showFromViewController:(UIViewController *)fromViewController
+                toViewControll:(UIViewController *)toViewController;
 
 @end
 

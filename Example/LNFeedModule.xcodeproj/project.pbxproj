@@ -23,6 +23,7 @@
 		71719F9F1E33DC2100824A3D /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 71719F9D1E33DC2100824A3D /* LaunchScreen.storyboard */; };
 		873B8AEB1B1F5CCA007FD442 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 873B8AEA1B1F5CCA007FD442 /* Main.storyboard */; };
 		B81407782727ECC5006FF84E /* LNTabBarViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = B81407772727ECC5006FF84E /* LNTabBarViewController.m */; };
+		B85CC722272AE73C00BCBA69 /* LNTestView.m in Sources */ = {isa = PBXBuildFile; fileRef = B85CC721272AE73C00BCBA69 /* LNTestView.m */; };
 		C1C4C36C828A471B85DFDDDA /* Pods_LNFeedModule_Tests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = AC9ECF8D40FA28AC81FFA612 /* Pods_LNFeedModule_Tests.framework */; };
 		E4016F38BA98C76DE935015D /* Pods_LNFeedModule_Example.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 787EE281D785A8FF398BCFB8 /* Pods_LNFeedModule_Example.framework */; };
 /* End PBXBuildFile section */
@@ -68,6 +69,8 @@
 		AC9ECF8D40FA28AC81FFA612 /* Pods_LNFeedModule_Tests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_LNFeedModule_Tests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		B81407762727ECC5006FF84E /* LNTabBarViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = LNTabBarViewController.h; sourceTree = "<group>"; };
 		B81407772727ECC5006FF84E /* LNTabBarViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = LNTabBarViewController.m; sourceTree = "<group>"; };
+		B85CC720272AE73C00BCBA69 /* LNTestView.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = LNTestView.h; sourceTree = "<group>"; };
+		B85CC721272AE73C00BCBA69 /* LNTestView.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = LNTestView.m; sourceTree = "<group>"; };
 		D63752394AB94D93AB1952E3 /* LICENSE */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text; name = LICENSE; path = ../LICENSE; sourceTree = "<group>"; };
 		DD205AEDB49A46D684AF422B /* Pods-LNFeedModule_Example.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-LNFeedModule_Example.debug.xcconfig"; path = "Target Support Files/Pods-LNFeedModule_Example/Pods-LNFeedModule_Example.debug.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -145,6 +148,8 @@
 				6003F594195388D20070C39A /* Supporting Files */,
 				B81407762727ECC5006FF84E /* LNTabBarViewController.h */,
 				B81407772727ECC5006FF84E /* LNTabBarViewController.m */,
+				B85CC720272AE73C00BCBA69 /* LNTestView.h */,
+				B85CC721272AE73C00BCBA69 /* LNTestView.m */,
 			);
 			name = "Example for LNFeedModule";
 			path = LNFeedModule;
@@ -382,6 +387,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				B81407782727ECC5006FF84E /* LNTabBarViewController.m in Sources */,
+				B85CC722272AE73C00BCBA69 /* LNTestView.m in Sources */,
 				6003F59E195388D20070C39A /* LNAppDelegate.m in Sources */,
 				6003F5A7195388D20070C39A /* LNViewController.m in Sources */,
 				6003F59A195388D20070C39A /* main.m in Sources */,
