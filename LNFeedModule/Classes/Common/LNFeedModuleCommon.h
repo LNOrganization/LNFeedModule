@@ -10,6 +10,5 @@
 
 #import "LNFeedMediatorDelegate.h"
 #import "LNFeedModelConfig.h"
-#import "LNFeedNetworkConst.h"
 
 #endif /* LNFeedModuleCommon_h */

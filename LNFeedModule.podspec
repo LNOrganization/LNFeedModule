@@ -47,23 +47,15 @@ Pod::Spec.new do |s|
     uikit.public_header_files = 'LNFeed/Classes/CustomUIKit/*.h'
   end
   
-  s.subspec 'Base' do |base|
-    base.source_files = 'LNFeedModule/Classes/Base/**/*'
-    base.public_header_files = 'LNFeedModule/Classes/Base/*.h'
-    # subspec依赖
-    base.dependency 'LNFeedModule/CustomUIKit'
-    base.dependency 'LNFeedModule/Common'
-    base.dependency 'LNFeedModule/Network'
-    
-  end
-  
   s.subspec 'Feature' do |feature|
     feature.source_files = 'LNFeedModule/Classes/Feature/**/*.{h,m}'
     feature.public_header_files = 'LNFeedModule/Classes/Feature/**/*.h'
     feature.resource_bundles = {
       'LNFeedModule' => ['LNFeedModule/Classes/Feature/**/*.xib']
     }
-    feature.dependency 'LNFeedModule/Base'
+    feature.dependency 'LNFeedModule/CustomUIKit'
+    feature.dependency 'LNFeedModule/Common'
+    feature.dependency 'LNFeedModule/Network'
   end
   
   s.subspec 'Mediator' do |mediator|
