@@ -18,7 +18,7 @@ NSString * const LNAccountLoginSucceedNotification = @"kLNAccountLoginSucceedNot
 NSString * const LNAccountLogoutFinishNotification = @"kLNAccountLogoutFinishNotification";
 
 
-__attribute__((constructor)) void addModulAccountModule(void){
+__attribute__((constructor)) void addModuleAccountModule(void){
     
     static dispatch_once_t onceToken;
     dispatch_once(&onceToken, ^{
@@ -28,9 +28,9 @@ __attribute__((constructor)) void addModulAccountModule(void){
 
 @interface LNLoginManager ()<LNAccountModuleProtocol>
 
-@property(nonatomic, strong) NSMutableDictionary *loginNotifications;
+@property(nonatomic, strong) LNSafeMutableDictionary *loginNotifications;
 
-@property(nonatomic, strong) NSMutableDictionary *logoutNotifications;
+@property(nonatomic, strong) LNSafeMutableDictionary *logoutNotifications;
 
 @end
 
@@ -51,8 +51,9 @@ __attribute__((constructor)) void addModulAccountModule(void){
 {
     self = [super init];
     if (self) {
-        _loginNotifications = [[NSMutableDictionary alloc] init];
-        _logoutNotifications = [[NSMutableDictionary alloc] init];
+        _loginNotifications = [[LNSafeMutableDictionary alloc] init];
+        _logoutNotifications = [[LNSafeMutableDictionary alloc] init];
+        [NSMapTable alloc];
     }
     return self;
 }
@@ -106,33 +107,29 @@ __attribute__((constructor)) void addModulAccountModule(void){
 
 - (void)registerLoginCompletionNotify:(LNLoginCompletion)completion forKey:(NSString *)key {
     if (key && completion && ![self.loginNotifications objectForKey:key]) {
-        [self.loginNotifications safe_setObject:completion forKey:key];
+        [self.loginNotifications setObject:completion forKey:key];
     }
 }
 
 - (void)removeLoginNotificationForKey:(NSString *)key
 {
     if (key && [self.loginNotifications objectForKey:key]) {
-        [self.loginNotifications safe_removeObjectForKey:key];
+        [self.loginNotifications removeObjectForKey:key];
     }
 }
 
 - (void)registerLogoutCompletionNotify:(LNLogotCompletion)completion forKey:(NSString *)key {
     if (key && completion && ![self.loginNotifications objectForKey:key]) {
-        [self.logoutNotifications safe_setObject:completion forKey:key];
+        [self.logoutNotifications setObject:completion forKey:key];
     }
 }
-
 
 - (void)removeLogoutNotificationForKey:(NSString *)key
 {
     if (key && [self.loginNotifications objectForKey:key]) {
-        [self.logoutNotifications safe_removeObjectForKey:key];
+        [self.logoutNotifications removeObjectForKey:key];
     }
 }
-
-
-
 
 - (void)showLoginViewControllerWithCompletion:(LNLoginCompletion)completion
 {

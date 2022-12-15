@@ -4,11 +4,16 @@ source 'https://github.com/NoNameOrganazation/LNSpec.git'
 platform :ios, '9.0'
 
 target 'LNFeedModule_Example' do
+  pod 'YYKit'
+  
   pod 'LNFeedModule', :path => '../'
-  pod 'LNAccountModule'
+  pod 'LNCommonKit', :path => '../../LNCommonKit'
+  pod 'LNModuleProtocol', :path => '../../LNModuleProtocol'
+  pod 'LNModuleCore', :path => '../../LNModuleCore'
+  pod 'LNAccountModule', :path => '../../LNAccountModule'
+  
   target 'LNFeedModule_Tests' do
     inherit! :search_paths
-
     
   end
 end

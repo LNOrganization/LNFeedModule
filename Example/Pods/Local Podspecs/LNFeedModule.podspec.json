@@ -20,11 +20,6 @@
   },
   "source_files": "LNFeedModule/Classes/*",
   "public_header_files": "LNFeedModule/Classes/*.h",
-  "resource_bundles": {
-    "LNFeedModule_Feed": [
-      "LNFeedModule/Classes/Feed/**/*.xib"
-    ]
-  },
   "dependencies": {
     "LNModuleProtocol": [
       "~>0.1.4"
@@ -35,9 +30,9 @@
   },
   "subspecs": [
     {
-      "name": "UIKit",
-      "source_files": "LNFeedModule/Classes/UIKit/**/*",
-      "public_header_files": "LNFeed/Classes/UIKit/*.h"
+      "name": "Network",
+      "source_files": "LNFeedModule/Classes/Network/**/*",
+      "public_header_files": "LNFeedModule/Classes/Network/*.h"
     },
     {
       "name": "Common",
@@ -45,14 +40,22 @@
       "public_header_files": "LNFeedModule/Classes/Common/*.h"
     },
     {
+      "name": "CustomUIKit",
+      "source_files": "LNFeedModule/Classes/CustomUIKit/**/*",
+      "public_header_files": "LNFeed/Classes/CustomUIKit/*.h"
+    },
+    {
       "name": "Base",
       "source_files": "LNFeedModule/Classes/Base/**/*",
       "public_header_files": "LNFeedModule/Classes/Base/*.h",
       "dependencies": {
-        "LNFeedModule/UIKit": [
+        "LNFeedModule/CustomUIKit": [
 
         ],
         "LNFeedModule/Common": [
+
+        ],
+        "LNFeedModule/Network": [
 
         ],
         "MJRefresh": [
@@ -60,99 +63,22 @@
         ],
         "SDWebImage": [
 
-        ]
-      }
-    },
-    {
-      "name": "Feed",
-      "source_files": "LNFeedModule/Classes/Feed/**/*.{h,m}",
-      "public_header_files": "LNFeedModule/Classes/Feed/*.h",
-      "subspecs": [
-        {
-          "name": "BaseFeed",
-          "source_files": "LNFeedModule/Classes/Feed/BaseFeed/**/*",
-          "public_header_files": "LNFeed/Classes/Feed/BaseFeed/*.h",
-          "dependencies": {
-            "LNFeedModule/Base": [
-
-            ],
-            "LNFeedModule/Topic": [
-
-            ],
-            "LNFeedModule/Comment": [
-
-            ],
-            "LNFeedModule/Like": [
-
-            ]
-          }
-        },
-        {
-          "name": "FeedDetail",
-          "source_files": "LNFeedModule/Classes/Feed/FeedDetail/**/*",
-          "public_header_files": "LNFeedModule/Classes/Feed/FeedDetail/*.h",
-          "dependencies": {
-            "LNFeedModule/Feed/BaseFeed": [
-
-            ]
-          }
-        },
-        {
-          "name": "TopicFeed",
-          "source_files": "LNFeedModule/Classes/Feed/TopicFeed/**/*",
-          "public_header_files": "LNFeedModule/Classes/Feed/TopicFeed/*.h",
-          "dependencies": {
-            "LNFeedModule/Feed/BaseFeed": [
-
-            ]
-          }
-        },
-        {
-          "name": "Recommend",
-          "source_files": "LNFeedModule/Classes/Feed/Recommend/**/*",
-          "public_header_files": "LNFeedModule/Classes/Feed/Recommend/*.h",
-          "dependencies": {
-            "LNFeedModule/Feed/BaseFeed": [
-
-            ]
-          }
-        },
-        {
-          "name": "TimeLine",
-          "source_files": "LNFeedModule/Classes/Feed/TimeLine/**/*",
-          "public_header_files": "LNFeedModule/Classes/Feed/TimeLine/*.h",
-          "dependencies": {
-            "LNFeedModule/Feed/BaseFeed": [
-
-            ]
-          }
-        }
-      ]
-    },
-    {
-      "name": "Topic",
-      "source_files": "LNFeedModule/Classes/Topic/**/*",
-      "public_header_files": "LNFeedModule/Classes/Topic/*.h",
-      "dependencies": {
-        "LNFeedModule/Base": [
+        ],
+        "AFNetworking": [
 
         ]
       }
     },
     {
-      "name": "Like",
-      "source_files": "LNFeedModule/Classes/Like/**/*",
-      "public_header_files": "LNFeedModule/Classes/Like/*.h",
-      "dependencies": {
-        "LNFeedModule/Base": [
-
+      "name": "Feature",
+      "source_files": "LNFeedModule/Classes/Feature/**/*.{h,m}",
+      "public_header_files": "LNFeedModule/Classes/Feature/**/*.h",
+      "resource_bundles": {
+        "LNFeedModule": [
+          "LNFeedModule/Classes/Feature/**/*.xib",
+          "LNFeedModule/Classes/**/*.{png,jpg,jpeg}"
         ]
-      }
-    },
-    {
-      "name": "Comment",
-      "source_files": "LNFeedModule/Classes/Comment/**/*",
-      "public_header_files": "LNFeedModule/Classes/Comment/*.h",
+      },
       "dependencies": {
         "LNFeedModule/Base": [
 
@@ -163,16 +89,7 @@
       "name": "Mediator",
       "source_files": "LNFeedModule/Classes/Mediator/**/*",
       "dependencies": {
-        "LNFeedModule/Feed": [
-
-        ],
-        "LNFeedModule/Topic": [
-
-        ],
-        "LNFeedModule/Comment": [
-
-        ],
-        "LNFeedModule/Like": [
+        "LNFeedModule/Feature": [
 
         ]
       }

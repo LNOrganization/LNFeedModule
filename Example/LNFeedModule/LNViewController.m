@@ -9,11 +9,8 @@
 #import "LNViewController.h"
 #import <LNModuleCore/LNModuleCore.h>
 #import <LNModuleProtocol/LNFeedModuleProtocol.h>
-#import "LNTestView.h"
 
 @interface LNViewController ()
-
-@property(nonatomic, strong) LNTestView *myView;
 
 @end
 
@@ -48,13 +45,6 @@
     UIViewController *feedVc = [feedModule getMainFeedViewController];
     [self.navigationController pushViewController:feedVc animated:YES];
 //    [self presentViewController:feedVc animated:YES completion:nil];
-}
-
-- (void)loadView
-{
-    self.myView = [[LNTestView alloc] initWithFrame:[UIApplication sharedApplication].keyWindow.bounds];
-    self.myView.backgroundColor = [UIColor redColor];
-    self.view = self.myView;
 }
 
 // Called when the view is about to made visible. Default does nothing
