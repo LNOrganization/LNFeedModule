@@ -15,7 +15,6 @@
 #import "LNFeedMediatorDelegate.h"
 #import "LNFeedModelConfig.h"
 #import "LNFeedModuleCommon.h"
-#import "LNFeedNetworkConst.h"
 #import "LNUIKitHelper.h"
 #import "UIFont+LNAddition.h"
 #import "UIScreen+LNUIKit.h"
@@ -51,6 +50,7 @@
 #import "LNTopicTableViewCell.h"
 #import "LNTopicTableViewController.h"
 #import "LNFeedMediator.h"
+#import "LNFeedNetworkConst.h"
 
 FOUNDATION_EXPORT double LNFeedModuleVersionNumber;
 FOUNDATION_EXPORT const unsigned char LNFeedModuleVersionString[];

@@ -1,6 +1,6 @@
 {
   "name": "LNFeedModule",
-  "version": "0.1.4",
+  "version": "0.1.5",
   "summary": "Feed流模块.",
   "description": "实现feed流模块.",
   "homepage": "https://github.com/NoNameOrganazation",
@@ -13,7 +13,7 @@
   },
   "source": {
     "git": "https://github.com/NoNameOrganazation/LNFeedModule.git",
-    "tag": "0.1.4"
+    "tag": "0.1.5"
   },
   "platforms": {
     "ios": "9.0"
@@ -45,22 +45,6 @@
       "public_header_files": "LNFeed/Classes/CustomUIKit/*.h"
     },
     {
-      "name": "Base",
-      "source_files": "LNFeedModule/Classes/Base/**/*",
-      "public_header_files": "LNFeedModule/Classes/Base/*.h",
-      "dependencies": {
-        "LNFeedModule/CustomUIKit": [
-
-        ],
-        "LNFeedModule/Common": [
-
-        ],
-        "LNFeedModule/Network": [
-
-        ]
-      }
-    },
-    {
       "name": "Feature",
       "source_files": "LNFeedModule/Classes/Feature/**/*.{h,m}",
       "public_header_files": "LNFeedModule/Classes/Feature/**/*.h",
@@ -70,7 +54,13 @@
         ]
       },
       "dependencies": {
-        "LNFeedModule/Base": [
+        "LNFeedModule/CustomUIKit": [
+
+        ],
+        "LNFeedModule/Common": [
+
+        ],
+        "LNFeedModule/Network": [
 
         ]
       }
