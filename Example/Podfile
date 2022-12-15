@@ -7,7 +7,7 @@ target 'LNFeedModule_Example' do
 #  pod 'LNModuleProtocol'
 #  pod 'LNCommonKit'
 #  pod 'LNModuleCore'
-  pod 'LNAccountModule'
+#  pod 'LNAccountModule', '0.1.8'
   
   
   pod 'LNFeedModule', :path => '../'
