@@ -14,106 +14,52 @@ PODS:
   - AFNetworking/Serialization (4.0.1)
   - AFNetworking/UIKit (4.0.1):
     - AFNetworking/NSURLSession
-  - Aspects (1.4.1)
-  - CocoaAsyncSocket (7.6.5)
   - JSONModel (1.8.0)
-  - LNCommonKit (0.1.8):
-    - AFNetworking (= 4.0.1)
-    - Aspects (= 1.4.1)
-    - CocoaAsyncSocket (= 7.6.5)
-    - JSONModel (= 1.8.0)
-    - LNCommonKit/BaseMVC (= 0.1.8)
-    - LNCommonKit/Consttant (= 0.1.8)
-    - LNCommonKit/CustomUIKit (= 0.1.8)
-    - LNCommonKit/Foundation (= 0.1.8)
-    - LNCommonKit/Log (= 0.1.8)
-    - LNCommonKit/Network (= 0.1.8)
-    - LNCommonKit/Router (= 0.1.8)
-    - Masonry (= 1.1.0)
-    - MJRefresh (= 3.7.2)
-    - SDWebImage (= 5.9.5)
-  - LNCommonKit/BaseMVC (0.1.8):
-    - AFNetworking (= 4.0.1)
-    - Aspects (= 1.4.1)
-    - CocoaAsyncSocket (= 7.6.5)
-    - JSONModel (= 1.8.0)
+  - LNCommonKit (1.0.0):
+    - LNCommonKit/BaseMVC (= 1.0.0)
+    - LNCommonKit/Consttant (= 1.0.0)
+    - LNCommonKit/CustomUIKit (= 1.0.0)
+    - LNCommonKit/Foundation (= 1.0.0)
+    - LNCommonKit/Log (= 1.0.0)
+    - LNCommonKit/Network (= 1.0.0)
+    - LNCommonKit/Router (= 1.0.0)
+  - LNCommonKit/BaseMVC (1.0.0):
     - LNCommonKit/CustomUIKit
     - LNCommonKit/Network
-    - Masonry (= 1.1.0)
-    - MJRefresh (= 3.7.2)
-    - SDWebImage (= 5.9.5)
-  - LNCommonKit/Consttant (0.1.8):
-    - AFNetworking (= 4.0.1)
-    - Aspects (= 1.4.1)
-    - CocoaAsyncSocket (= 7.6.5)
-    - JSONModel (= 1.8.0)
-    - Masonry (= 1.1.0)
-    - MJRefresh (= 3.7.2)
-    - SDWebImage (= 5.9.5)
-  - LNCommonKit/CustomUIKit (0.1.8):
-    - AFNetworking (= 4.0.1)
-    - Aspects (= 1.4.1)
-    - CocoaAsyncSocket (= 7.6.5)
-    - JSONModel (= 1.8.0)
-    - Masonry (= 1.1.0)
-    - MJRefresh (= 3.7.2)
-    - SDWebImage (= 5.9.5)
-  - LNCommonKit/Foundation (0.1.8):
-    - AFNetworking (= 4.0.1)
-    - Aspects (= 1.4.1)
-    - CocoaAsyncSocket (= 7.6.5)
-    - JSONModel (= 1.8.0)
-    - Masonry (= 1.1.0)
-    - MJRefresh (= 3.7.2)
-    - SDWebImage (= 5.9.5)
-  - LNCommonKit/Log (0.1.8):
-    - AFNetworking (= 4.0.1)
-    - Aspects (= 1.4.1)
-    - CocoaAsyncSocket (= 7.6.5)
-    - JSONModel (= 1.8.0)
-    - Masonry (= 1.1.0)
-    - MJRefresh (= 3.7.2)
-    - SDWebImage (= 5.9.5)
-  - LNCommonKit/Network (0.1.8):
-    - AFNetworking (= 4.0.1)
-    - Aspects (= 1.4.1)
-    - CocoaAsyncSocket (= 7.6.5)
-    - JSONModel (= 1.8.0)
-    - Masonry (= 1.1.0)
-    - MJRefresh (= 3.7.2)
-    - SDWebImage (= 5.9.5)
-  - LNCommonKit/Router (0.1.8):
-    - AFNetworking (= 4.0.1)
-    - Aspects (= 1.4.1)
-    - CocoaAsyncSocket (= 7.6.5)
-    - JSONModel (= 1.8.0)
-    - Masonry (= 1.1.0)
-    - MJRefresh (= 3.7.2)
-    - SDWebImage (= 5.9.5)
-  - LNFeedModule (0.1.5):
+    - MJRefresh (~> 3.7.2)
+  - LNCommonKit/Consttant (1.0.0)
+  - LNCommonKit/CustomUIKit (1.0.0):
+    - LNCommonKit/CustomUIKit/ImgLoopScroll (= 1.0.0)
+  - LNCommonKit/CustomUIKit/ImgLoopScroll (1.0.0)
+  - LNCommonKit/Foundation (1.0.0)
+  - LNCommonKit/Log (1.0.0)
+  - LNCommonKit/Network (1.0.0):
+    - AFNetworking (~> 4.0.1)
+  - LNCommonKit/Router (1.0.0)
+  - LNFeedModule (0.1.6):
     - JSONModel (~> 1.8.0)
     - LNCommonKit
-    - LNFeedModule/Common (= 0.1.5)
-    - LNFeedModule/CustomUIKit (= 0.1.5)
-    - LNFeedModule/Feature (= 0.1.5)
-    - LNFeedModule/Mediator (= 0.1.5)
-    - LNFeedModule/Network (= 0.1.5)
+    - LNFeedModule/Common (= 0.1.6)
+    - LNFeedModule/CustomUIKit (= 0.1.6)
+    - LNFeedModule/Feature (= 0.1.6)
+    - LNFeedModule/Mediator (= 0.1.6)
+    - LNFeedModule/Network (= 0.1.6)
     - LNModuleProtocol
     - MBProgressHUD (~> 1.0.0)
     - SDWebImage (~> 5.9.0)
-  - LNFeedModule/Common (0.1.5):
+  - LNFeedModule/Common (0.1.6):
     - JSONModel (~> 1.8.0)
     - LNCommonKit
     - LNModuleProtocol
     - MBProgressHUD (~> 1.0.0)
     - SDWebImage (~> 5.9.0)
-  - LNFeedModule/CustomUIKit (0.1.5):
+  - LNFeedModule/CustomUIKit (0.1.6):
     - JSONModel (~> 1.8.0)
     - LNCommonKit
     - LNModuleProtocol
     - MBProgressHUD (~> 1.0.0)
     - SDWebImage (~> 5.9.0)
-  - LNFeedModule/Feature (0.1.5):
+  - LNFeedModule/Feature (0.1.6):
     - JSONModel (~> 1.8.0)
     - LNCommonKit
     - LNFeedModule/Common
@@ -122,25 +68,24 @@ PODS:
     - LNModuleProtocol
     - MBProgressHUD (~> 1.0.0)
     - SDWebImage (~> 5.9.0)
-  - LNFeedModule/Mediator (0.1.5):
+  - LNFeedModule/Mediator (0.1.6):
     - JSONModel (~> 1.8.0)
     - LNCommonKit
     - LNFeedModule/Feature
     - LNModuleProtocol
     - MBProgressHUD (~> 1.0.0)
     - SDWebImage (~> 5.9.0)
-  - LNFeedModule/Network (0.1.5):
+  - LNFeedModule/Network (0.1.6):
     - JSONModel (~> 1.8.0)
     - LNCommonKit
     - LNModuleProtocol
     - MBProgressHUD (~> 1.0.0)
     - SDWebImage (~> 5.9.0)
   - LNModuleCore (0.1.9)
-  - LNModuleProtocol (0.1.5):
+  - LNModuleProtocol (1.0.0):
     - LNModuleCore
-  - Masonry (1.1.0)
   - MBProgressHUD (1.0.0)
-  - MJRefresh (3.7.2)
+  - MJRefresh (3.7.5)
   - SDWebImage (5.9.5):
     - SDWebImage/Core (= 5.9.5)
   - SDWebImage/Core (5.9.5)
@@ -151,10 +96,7 @@ DEPENDENCIES:
 SPEC REPOS:
   https://github.com/CocoaPods/Specs.git:
     - AFNetworking
-    - Aspects
-    - CocoaAsyncSocket
     - JSONModel
-    - Masonry
     - MBProgressHUD
     - MJRefresh
     - SDWebImage
@@ -169,16 +111,13 @@ EXTERNAL SOURCES:
 
 SPEC CHECKSUMS:
   AFNetworking: 7864c38297c79aaca1500c33288e429c3451fdce
-  Aspects: 7595ba96a6727a58ebcbfc954497fc5d2fdde546
-  CocoaAsyncSocket: 065fd1e645c7abab64f7a6a2007a48038fdc6a99
   JSONModel: 02ab723958366a3fd27da57ea2af2113658762e9
-  LNCommonKit: 348c5dc55afedde4a509e1831d433bc2d3f0dccd
-  LNFeedModule: accf74ca7adbe4b41704efb37370f3aa81116e9d
+  LNCommonKit: 632a5ecb084048c3742f35bf108e5b7a6ec8c172
+  LNFeedModule: fef83deb234340d3a2e252a02cc205887c85c6d1
   LNModuleCore: d37faf840963a9ccc7e6830331e1f340d86ac866
-  LNModuleProtocol: 40ae683fedbbeccf8294c064d294f98dae54a99b
-  Masonry: 678fab65091a9290e40e2832a55e7ab731aad201
+  LNModuleProtocol: 8fc489749fc2d6d3df1a3be70c1cff817ae5a143
   MBProgressHUD: 4890f671c94e8a0f3cf959aa731e9de2f036d71a
-  MJRefresh: 30997d30b347c8e9508a4db11e3a690da0c9b85a
+  MJRefresh: fdf5e979eb406a0341468932d1dfc8b7f9fce961
   SDWebImage: 0b2ba0d56479bf6a45ecddbfd5558bea93150d25
 
 PODFILE CHECKSUM: 8df8bd50df052a0a66d53e75b03222ad35590c1f

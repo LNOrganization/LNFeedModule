@@ -7,26 +7,28 @@
 
 #import "LNTopicListDataSource.h"
 #import "LNTopic.h"
-
+#import "LNFeedNetworkConst.h"
 @implementation LNTopicListDataSource
-//dispatch_async(dispatch_get_global_queue(0, 0), ^{
-//    for (NSInteger index = 0; index < self.pageSize; index ++) {
-//
-//    }
-//});
+
 - (LNHTTPRequest *)requestWithSuccess:(LNRequestSuccessBlock)success
-                              failure:(LNRequestFailureBlock)failure
-{
-    dispatch_async(dispatch_get_global_queue(0, 0), ^{
-        NSMutableArray *topics = [NSMutableArray array];
-        for (NSInteger index = 0; index < self.pageSize; index ++) {
-            LNTopic *topic = [[LNTopic alloc] init];
-            topic.name = [NSString stringWithFormat:@"这是一个很好的话题-%@",@(index)];
-            [topics addObject:topic];
-        }
-        if (success) {
-            success(topics);
-        }
-    });
+                              failure:(LNRequestFailureBlock)failure{
+    
+    LNHTTPRequest *request = [LNNetworkManager startRequestCreator:^(LNHTTPRequest *  _Nonnull request) {
+        request.urlPath = LNFeedTopicsPath;
+        [request createParameters:^(NSMutableDictionary * _Nonnull params) {
+            [params setObject:@(self.pageSize) forKey:@"pageSize"];
+            [params setObject:@(self.currentPage) forKey:@"currentPage"];
+        }];
+    }
+    succeed:^(id  _Nonnull data) {
+        LNSafeBlockCall(success, data);
+    } failed:^(NSError * _Nonnull error) {
+        LNSafeBlockCall(failure, error);
+    }];
+    
+    return request;
 }
+
+
+
 @end

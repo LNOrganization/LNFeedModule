@@ -1,6 +1,6 @@
 {
   "name": "LNFeedModule",
-  "version": "0.1.5",
+  "version": "0.1.6",
   "summary": "Feed流模块.",
   "description": "实现feed流模块.",
   "homepage": "https://github.com/NoNameOrganazation/LNFeedModule",
@@ -13,7 +13,7 @@
   },
   "source": {
     "git": "https://github.com/NoNameOrganazation/LNFeedModule.git",
-    "tag": "0.1.5"
+    "tag": "0.1.6"
   },
   "platforms": {
     "ios": "9.0"

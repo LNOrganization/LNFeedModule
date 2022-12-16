@@ -1,27 +1,23 @@
 //
-//  LNRequestManager.h
-//  LNFeedModule
+//  LNNetworkManager.h
+//  LNCommonKit
 //
 //  Created by Lenny on 2022/12/3.
 //
 
 #import <Foundation/Foundation.h>
-#import "LNRequestConfig.h"
 #import "LNHTTPRequest.h"
 
 NS_ASSUME_NONNULL_BEGIN
 
 @protocol LNHTTPClientDelegate;
 
-@interface LNRequestManager : NSObject
+@interface LNNetworkManager : NSObject
 
 - (instancetype)init NS_UNAVAILABLE;
 + (instancetype)new NS_UNAVAILABLE;
 
-typedef void (^LNRequestCreator)(LNHTTPRequest* request);
-typedef void (^LNRequestSuccessBlock)(id data);
-typedef void (^LNRequestFailureBlock)(NSError *error);
-typedef void (^LNRequestProgressBlock)(NSProgress *progress);
++ (LNNetworkManager *)sharedInstance;
 
 + (LNHTTPRequest *)startRequestCreator:(LNRequestCreator)requestCreator
                                succeed:(LNRequestSuccessBlock)succeedBlock
@@ -43,10 +39,9 @@ typedef void (^LNRequestProgressBlock)(NSProgress *progress);
 
 + (void)cancelRequest:(LNHTTPRequest *)request;
 
-@property(nonatomic, strong)   id<LNHTTPClientDelegate> httpClient;
+@property(nonatomic, strong) id<LNHTTPClientDelegate> httpClient;
 
-@property(nonatomic, strong) id<LNRequestConfigAdapter> requestConfig;
-
+@property(nonatomic, strong) id<LNNetworkConfigAdapter> requestConfig;
 
 @end
 

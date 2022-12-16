@@ -1,20 +1,20 @@
 //
-//  DJXCircleScrollView.m
-//  DJXCircleScrollView
+//  LNImageLoopScrollView.m
+//  LNImageLoopScrollView
 //
 //  Created by dongjianxiong on 16/9/26.
 //  Copyright © 2016年 dongjianxiong. All rights reserved.
 //
 
 
-#import "LNImageCircleScrollView.h"
+#import "LNImageLoopScrollView.h"
 
 typedef NS_ENUM(NSInteger, LNImageScrollDirection) {
     LNImageScrollDirectionLeft,
     LNImageScrollDirectionRight,
 };
 
-@interface LNImageCircleScrollView ()<UIScrollViewDelegate>
+@interface LNImageLoopScrollView ()<UIScrollViewDelegate>
 
 @property (nonatomic, strong) UIScrollView *scrollView;
 
@@ -48,7 +48,7 @@ typedef NS_ENUM(NSInteger, LNImageScrollDirection) {
 
 @end
 
-@implementation LNImageCircleScrollView
+@implementation LNImageLoopScrollView
 
 - (instancetype)initWithFrame:(CGRect)frame
 {
