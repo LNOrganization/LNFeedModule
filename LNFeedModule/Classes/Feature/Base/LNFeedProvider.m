@@ -21,7 +21,7 @@
     feed.isLike = isLike;
     LNSafeBlockCall(completion, @"成功");
     
-    [LNRequestManager startRequestCreator:^(LNHTTPRequest * _Nonnull request) {
+    [LNNetworkManager startRequestCreator:^(LNHTTPRequest * _Nonnull request) {
         if (isLike) {
             request.urlPath = @"feed/unlike";
         }else{
@@ -47,7 +47,7 @@
     }
     feed.isStored = isStore;
     LNSafeBlockCall(completion, @"成功");
-    [LNRequestManager startRequestCreator:^(LNHTTPRequest * _Nonnull request) {
+    [LNNetworkManager startRequestCreator:^(LNHTTPRequest * _Nonnull request) {
         if (isStore) {
             request.urlPath = @"feed/cancelStore";
         }else{
@@ -74,7 +74,7 @@
     }
     feed.comments = [comments copy];
     LNSafeBlockCall(completion, @"成功");
-    [LNRequestManager startRequestCreator:^(LNHTTPRequest * _Nonnull request) {
+    [LNNetworkManager startRequestCreator:^(LNHTTPRequest * _Nonnull request) {
         request.urlPath = @"feed/addComment";
         request.methodType = LNHTTPMethodTypePost;
         [request createParameters:^(NSMutableDictionary * _Nonnull params) {
@@ -105,7 +105,7 @@
     }
     feed.comments = [comments copy];
     LNSafeBlockCall(completion, @"成功");
-    [LNRequestManager startRequestCreator:^(LNHTTPRequest * _Nonnull request) {
+    [LNNetworkManager startRequestCreator:^(LNHTTPRequest * _Nonnull request) {
         request.urlPath = @"feed/deleteComment";
         request.methodType = LNHTTPMethodTypeDelete;
         [request createParameters:^(NSMutableDictionary * _Nonnull params) {
@@ -133,7 +133,7 @@
     feed.topics = topics;
     LNSafeBlockCall(completion, @"成功");
     
-    [LNRequestManager startRequestCreator:^(LNHTTPRequest * _Nonnull request) {
+    [LNNetworkManager startRequestCreator:^(LNHTTPRequest * _Nonnull request) {
         request.urlPath = @"feed/forwardFeed";
         request.methodType = LNHTTPMethodTypePost;
         [request createParameters:^(NSMutableDictionary * _Nonnull params) {

@@ -24,8 +24,8 @@
     return self;
 }
 
-- (void)requestWithSuccess:(LNLoadSuccessBlock)success
-                        failure:(LNLoadFailureBlock)failure
+- (LNHTTPRequest *)requestWithSuccess:(LNRequestSuccessBlock)success
+                              failure:(LNRequestFailureBlock)failure
 {
     dispatch_async(dispatch_get_global_queue(0, 0), ^{
         NSMutableArray *dataList = [NSMutableArray array];

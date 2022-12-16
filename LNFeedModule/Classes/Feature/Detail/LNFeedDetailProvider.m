@@ -12,7 +12,7 @@
 - (LNHTTPRequest *)requestWithSuccess:(LNRequestSuccessBlock)success
                               failure:(LNRequestFailureBlock)failure
 {
-    return [LNRequestManager startRequestCreator:^(LNHTTPRequest * _Nonnull request) {
+    return [LNNetworkManager startRequestCreator:^(LNHTTPRequest * _Nonnull request) {
         
     } succeed:^(id  _Nonnull data) {
         

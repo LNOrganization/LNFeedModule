@@ -20,8 +20,7 @@ Pod::Spec.new do |s|
   s.description      = <<-DESC
 实现feed流模块.
                        DESC
-                       #  https://github.com/NoNameOrganazation/LNFeed.git
-  s.homepage         = 'https://github.com/NoNameOrganazation'
+  s.homepage         = 'https://github.com/NoNameOrganazation/LNFeedModule'
   # s.screenshots     = 'www.example.com/screenshots_1', 'www.example.com/screenshots_2'
   s.license          = { :type => 'MIT', :file => 'LICENSE' }
   s.author           = { 'dongjianxiong' => 'jianxiong20090919@126.com' }
@@ -63,9 +62,19 @@ Pod::Spec.new do |s|
     mediator.dependency 'LNFeedModule/Feature'
   end
   
-  s.dependency 'LNModuleProtocol', '0.1.5'
-  s.dependency 'LNCommonKit', '0.1.8'
+  #私有库
+  s.dependency 'LNModuleProtocol'
+  s.dependency 'LNCommonKit'
   
+  #公有库
+  s.dependency 'SDWebImage', '~>5.9.0'
+  s.dependency 'JSONModel', '~>1.8.0'
+  s.dependency 'MBProgressHUD', '~> 1.0.0'
+
+#  s.dependency 'Masonry', '~>1.1.0'
+#  s.dependency 'CocoaAsyncSocket', '~>7.6.5'
+#  s.dependency 'Aspects', '~>1.4.1'
+
 
 #   s.resource_bundles = {
 #     'LNFeed' => ['LNFeed/Assets/*.png']

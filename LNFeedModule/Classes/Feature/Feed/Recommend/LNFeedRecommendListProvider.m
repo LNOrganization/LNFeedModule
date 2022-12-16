@@ -21,7 +21,7 @@
 - (LNHTTPRequest *)requestWithSuccess:(LNRequestSuccessBlock)success
                               failure:(LNRequestFailureBlock)failure{
     
-    LNHTTPRequest *request = [LNRequestManager startRequestCreator:^(LNHTTPRequest *  _Nonnull request) {
+    LNHTTPRequest *request = [LNNetworkManager startRequestCreator:^(LNHTTPRequest *  _Nonnull request) {
         request.urlPath = LNFeedRecommendsPath;
         [request createParameters:^(NSMutableDictionary * _Nonnull params) {
             [params setObject:@(self.pageSize) forKey:@"pageSize"];
