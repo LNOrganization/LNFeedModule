@@ -91,36 +91,55 @@ PODS:
     - MJRefresh (= 3.7.2)
     - SDWebImage (= 5.9.5)
   - LNFeedModule (0.1.5):
-    - LNCommonKit (= 0.1.8)
+    - JSONModel (~> 1.8.0)
+    - LNCommonKit
     - LNFeedModule/Common (= 0.1.5)
     - LNFeedModule/CustomUIKit (= 0.1.5)
     - LNFeedModule/Feature (= 0.1.5)
     - LNFeedModule/Mediator (= 0.1.5)
     - LNFeedModule/Network (= 0.1.5)
-    - LNModuleProtocol (= 0.1.5)
+    - LNModuleProtocol
+    - MBProgressHUD (~> 1.0.0)
+    - SDWebImage (~> 5.9.0)
   - LNFeedModule/Common (0.1.5):
-    - LNCommonKit (= 0.1.8)
-    - LNModuleProtocol (= 0.1.5)
+    - JSONModel (~> 1.8.0)
+    - LNCommonKit
+    - LNModuleProtocol
+    - MBProgressHUD (~> 1.0.0)
+    - SDWebImage (~> 5.9.0)
   - LNFeedModule/CustomUIKit (0.1.5):
-    - LNCommonKit (= 0.1.8)
-    - LNModuleProtocol (= 0.1.5)
+    - JSONModel (~> 1.8.0)
+    - LNCommonKit
+    - LNModuleProtocol
+    - MBProgressHUD (~> 1.0.0)
+    - SDWebImage (~> 5.9.0)
   - LNFeedModule/Feature (0.1.5):
-    - LNCommonKit (= 0.1.8)
+    - JSONModel (~> 1.8.0)
+    - LNCommonKit
     - LNFeedModule/Common
     - LNFeedModule/CustomUIKit
     - LNFeedModule/Network
-    - LNModuleProtocol (= 0.1.5)
+    - LNModuleProtocol
+    - MBProgressHUD (~> 1.0.0)
+    - SDWebImage (~> 5.9.0)
   - LNFeedModule/Mediator (0.1.5):
-    - LNCommonKit (= 0.1.8)
+    - JSONModel (~> 1.8.0)
+    - LNCommonKit
     - LNFeedModule/Feature
-    - LNModuleProtocol (= 0.1.5)
+    - LNModuleProtocol
+    - MBProgressHUD (~> 1.0.0)
+    - SDWebImage (~> 5.9.0)
   - LNFeedModule/Network (0.1.5):
-    - LNCommonKit (= 0.1.8)
-    - LNModuleProtocol (= 0.1.5)
+    - JSONModel (~> 1.8.0)
+    - LNCommonKit
+    - LNModuleProtocol
+    - MBProgressHUD (~> 1.0.0)
+    - SDWebImage (~> 5.9.0)
   - LNModuleCore (0.1.9)
   - LNModuleProtocol (0.1.5):
     - LNModuleCore
   - Masonry (1.1.0)
+  - MBProgressHUD (1.0.0)
   - MJRefresh (3.7.2)
   - SDWebImage (5.9.5):
     - SDWebImage/Core (= 5.9.5)
@@ -136,6 +155,7 @@ SPEC REPOS:
     - CocoaAsyncSocket
     - JSONModel
     - Masonry
+    - MBProgressHUD
     - MJRefresh
     - SDWebImage
   https://github.com/NoNameOrganazation/LNSpec.git:
@@ -153,10 +173,11 @@ SPEC CHECKSUMS:
   CocoaAsyncSocket: 065fd1e645c7abab64f7a6a2007a48038fdc6a99
   JSONModel: 02ab723958366a3fd27da57ea2af2113658762e9
   LNCommonKit: 348c5dc55afedde4a509e1831d433bc2d3f0dccd
-  LNFeedModule: f7ebb30a1c0fec63639f083eb1510a71134b1959
+  LNFeedModule: accf74ca7adbe4b41704efb37370f3aa81116e9d
   LNModuleCore: d37faf840963a9ccc7e6830331e1f340d86ac866
   LNModuleProtocol: 40ae683fedbbeccf8294c064d294f98dae54a99b
   Masonry: 678fab65091a9290e40e2832a55e7ab731aad201
+  MBProgressHUD: 4890f671c94e8a0f3cf959aa731e9de2f036d71a
   MJRefresh: 30997d30b347c8e9508a4db11e3a690da0c9b85a
   SDWebImage: 0b2ba0d56479bf6a45ecddbfd5558bea93150d25
 
