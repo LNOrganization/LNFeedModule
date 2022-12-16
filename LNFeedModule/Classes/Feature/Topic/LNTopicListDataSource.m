@@ -8,6 +8,8 @@
 #import "LNTopicListDataSource.h"
 #import "LNTopic.h"
 #import "LNFeedNetworkConst.h"
+
+
 @implementation LNTopicListDataSource
 
 - (LNHTTPRequest *)requestWithSuccess:(LNRequestSuccessBlock)success
