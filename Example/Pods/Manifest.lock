@@ -78,37 +78,53 @@ PODS:
   - LNCommonKit/Network/LNHTTPClient (1.0.4):
     - LNCommonKit/Network/Core
   - LNCommonKit/Router (1.0.4)
-  - LNFeedModule (0.1.7):
+  - LNFeedModule (0.1.8):
     - JSONModel (~> 1.8.0)
     - LNCommonKit
-    - LNFeedModule/Common (= 0.1.7)
-    - LNFeedModule/CustomUIKit (= 0.1.7)
-    - LNFeedModule/Data (= 0.1.7)
-    - LNFeedModule/Feature (= 0.1.7)
-    - LNFeedModule/Mediator (= 0.1.7)
-    - LNFeedModule/Network (= 0.1.7)
+    - LNFeedModule/Common (= 0.1.8)
+    - LNFeedModule/CustomUIKit (= 0.1.8)
+    - LNFeedModule/Data (= 0.1.8)
+    - LNFeedModule/Feature (= 0.1.8)
+    - LNFeedModule/Mediator (= 0.1.8)
+    - LNFeedModule/Network (= 0.1.8)
     - LNModuleProtocol
     - MBProgressHUD (~> 1.0.0)
     - SDWebImage (~> 5.9.0)
-  - LNFeedModule/Common (0.1.7):
-    - JSONModel (~> 1.8.0)
-    - LNCommonKit
-    - LNModuleProtocol
-    - MBProgressHUD (~> 1.0.0)
-    - SDWebImage (~> 5.9.0)
-  - LNFeedModule/CustomUIKit (0.1.7):
+  - LNFeedModule/Common (0.1.8):
     - JSONModel (~> 1.8.0)
     - LNCommonKit
     - LNModuleProtocol
     - MBProgressHUD (~> 1.0.0)
     - SDWebImage (~> 5.9.0)
-  - LNFeedModule/Data (0.1.7):
+  - LNFeedModule/CustomUIKit (0.1.8):
     - JSONModel (~> 1.8.0)
     - LNCommonKit
     - LNModuleProtocol
     - MBProgressHUD (~> 1.0.0)
     - SDWebImage (~> 5.9.0)
-  - LNFeedModule/Feature (0.1.7):
+  - LNFeedModule/Data (0.1.8):
+    - JSONModel (~> 1.8.0)
+    - LNCommonKit
+    - LNModuleProtocol
+    - MBProgressHUD (~> 1.0.0)
+    - SDWebImage (~> 5.9.0)
+  - LNFeedModule/Feature (0.1.8):
+    - JSONModel (~> 1.8.0)
+    - LNCommonKit
+    - LNFeedModule/Common
+    - LNFeedModule/CustomUIKit
+    - LNFeedModule/Data
+    - LNFeedModule/Feature/Base (= 0.1.8)
+    - LNFeedModule/Feature/Comment (= 0.1.8)
+    - LNFeedModule/Feature/Detail (= 0.1.8)
+    - LNFeedModule/Feature/Feed (= 0.1.8)
+    - LNFeedModule/Feature/Like (= 0.1.8)
+    - LNFeedModule/Feature/Topic (= 0.1.8)
+    - LNFeedModule/Network
+    - LNModuleProtocol
+    - MBProgressHUD (~> 1.0.0)
+    - SDWebImage (~> 5.9.0)
+  - LNFeedModule/Feature/Base (0.1.8):
     - JSONModel (~> 1.8.0)
     - LNCommonKit
     - LNFeedModule/Common
@@ -118,14 +134,69 @@ PODS:
     - LNModuleProtocol
     - MBProgressHUD (~> 1.0.0)
     - SDWebImage (~> 5.9.0)
-  - LNFeedModule/Mediator (0.1.7):
+  - LNFeedModule/Feature/Comment (0.1.8):
+    - JSONModel (~> 1.8.0)
+    - LNCommonKit
+    - LNFeedModule/Common
+    - LNFeedModule/CustomUIKit
+    - LNFeedModule/Data
+    - LNFeedModule/Feature/Base
+    - LNFeedModule/Network
+    - LNModuleProtocol
+    - MBProgressHUD (~> 1.0.0)
+    - SDWebImage (~> 5.9.0)
+  - LNFeedModule/Feature/Detail (0.1.8):
+    - JSONModel (~> 1.8.0)
+    - LNCommonKit
+    - LNFeedModule/Common
+    - LNFeedModule/CustomUIKit
+    - LNFeedModule/Data
+    - LNFeedModule/Feature/Base
+    - LNFeedModule/Network
+    - LNModuleProtocol
+    - MBProgressHUD (~> 1.0.0)
+    - SDWebImage (~> 5.9.0)
+  - LNFeedModule/Feature/Feed (0.1.8):
+    - JSONModel (~> 1.8.0)
+    - LNCommonKit
+    - LNFeedModule/Common
+    - LNFeedModule/CustomUIKit
+    - LNFeedModule/Data
+    - LNFeedModule/Feature/Base
+    - LNFeedModule/Network
+    - LNModuleProtocol
+    - MBProgressHUD (~> 1.0.0)
+    - SDWebImage (~> 5.9.0)
+  - LNFeedModule/Feature/Like (0.1.8):
+    - JSONModel (~> 1.8.0)
+    - LNCommonKit
+    - LNFeedModule/Common
+    - LNFeedModule/CustomUIKit
+    - LNFeedModule/Data
+    - LNFeedModule/Feature/Base
+    - LNFeedModule/Network
+    - LNModuleProtocol
+    - MBProgressHUD (~> 1.0.0)
+    - SDWebImage (~> 5.9.0)
+  - LNFeedModule/Feature/Topic (0.1.8):
+    - JSONModel (~> 1.8.0)
+    - LNCommonKit
+    - LNFeedModule/Common
+    - LNFeedModule/CustomUIKit
+    - LNFeedModule/Data
+    - LNFeedModule/Feature/Base
+    - LNFeedModule/Network
+    - LNModuleProtocol
+    - MBProgressHUD (~> 1.0.0)
+    - SDWebImage (~> 5.9.0)
+  - LNFeedModule/Mediator (0.1.8):
     - JSONModel (~> 1.8.0)
     - LNCommonKit
     - LNFeedModule/Feature
     - LNModuleProtocol
     - MBProgressHUD (~> 1.0.0)
     - SDWebImage (~> 5.9.0)
-  - LNFeedModule/Network (0.1.7):
+  - LNFeedModule/Network (0.1.8):
     - JSONModel (~> 1.8.0)
     - LNCommonKit
     - LNModuleProtocol
@@ -163,7 +234,7 @@ SPEC CHECKSUMS:
   AFNetworking: 7864c38297c79aaca1500c33288e429c3451fdce
   JSONModel: 02ab723958366a3fd27da57ea2af2113658762e9
   LNCommonKit: c9fc5119f1c83b9d0e8b0861218d2934f7cd7964
-  LNFeedModule: 0c204a80f87ee99c4222a078a1c79ab6704ea737
+  LNFeedModule: 5f9bc2f63209fa49b5a44158c454e0220bfe9733
   LNModuleCore: 29c56ccca0d7386575d591b56c432f288da21e64
   LNModuleProtocol: 0c7c20e98b1c6006c7fdbe753aa6862b1d8c9765
   MBProgressHUD: 4890f671c94e8a0f3cf959aa731e9de2f036d71a

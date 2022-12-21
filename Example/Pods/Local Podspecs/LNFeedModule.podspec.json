@@ -1,6 +1,6 @@
 {
   "name": "LNFeedModule",
-  "version": "0.1.7",
+  "version": "0.1.8",
   "summary": "Feed流模块.",
   "description": "实现feed流模块.",
   "homepage": "https://github.com/LNOrganization/LNFeedModule",
@@ -13,7 +13,7 @@
   },
   "source": {
     "git": "https://github.com/LNOrganization/LNFeedModule.git",
-    "tag": "0.1.7"
+    "tag": "0.1.8"
   },
   "platforms": {
     "ios": "9.0"
@@ -80,7 +80,64 @@
         "LNFeedModule/Data": [
 
         ]
-      }
+      },
+      "subspecs": [
+        {
+          "name": "Base",
+          "source_files": "LNFeedModule/Classes/Feature/Base/**/*",
+          "public_header_files": "LNFeedModule/Classes/Feature/Base/*.h"
+        },
+        {
+          "name": "Detail",
+          "source_files": "LNFeedModule/Classes/Feature/Detail/**/*",
+          "public_header_files": "LNFeedModule/Classes/Feature/Detail/*.h",
+          "dependencies": {
+            "LNFeedModule/Feature/Base": [
+
+            ]
+          }
+        },
+        {
+          "name": "Feed",
+          "source_files": "LNFeedModule/Classes/Feature/Feed/**/*",
+          "public_header_files": "LNFeedModule/Classes/Feature/Feed/*.h",
+          "dependencies": {
+            "LNFeedModule/Feature/Base": [
+
+            ]
+          }
+        },
+        {
+          "name": "Comment",
+          "source_files": "LNFeedModule/Classes/Feature/Comment/**/*",
+          "public_header_files": "LNFeedModule/Classes/Feature/Comment/*.h",
+          "dependencies": {
+            "LNFeedModule/Feature/Base": [
+
+            ]
+          }
+        },
+        {
+          "name": "Like",
+          "source_files": "LNFeedModule/Classes/Feature/Like/**/*",
+          "public_header_files": "LNFeedModule/Classes/Feature/Like/*.h",
+          "dependencies": {
+            "LNFeedModule/Feature/Base": [
+
+            ]
+          }
+        },
+        {
+          "name": "Topic",
+          "source_files": "LNFeedModule/Classes/Feature/Topic/**/*",
+          "public_header_files": "LNFeedModule/Classes/Feature/Topic/*.h",
+          "dependencies": {
+            "LNFeedModule/Feature/Base": [
+
+            ]
+          }
+        }
+      ]
     },
     {
       "name": "Mediator",

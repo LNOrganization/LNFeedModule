@@ -55,6 +55,36 @@ Pod::Spec.new do |s|
   s.subspec 'Feature' do |feature|
     feature.source_files = 'LNFeedModule/Classes/Feature/**/*.{h,m}'
     feature.public_header_files = 'LNFeedModule/Classes/Feature/**/*.h'
+    feature.subspec 'Base' do |s1|
+      s1.source_files = 'LNFeedModule/Classes/Feature/Base/**/*'
+      s1.public_header_files = 'LNFeedModule/Classes/Feature/Base/*.h'
+    end
+    feature.subspec 'Detail' do |s1|
+      s1.source_files = 'LNFeedModule/Classes/Feature/Detail/**/*'
+      s1.public_header_files = 'LNFeedModule/Classes/Feature/Detail/*.h'
+      s1.dependency 'LNFeedModule/Feature/Base'
+    end
+    feature.subspec 'Feed' do |s1|
+      s1.source_files = 'LNFeedModule/Classes/Feature/Feed/**/*'
+      s1.public_header_files = 'LNFeedModule/Classes/Feature/Feed/*.h'
+      s1.dependency 'LNFeedModule/Feature/Base'
+    end
+    feature.subspec 'Comment' do |s1|
+      s1.source_files = 'LNFeedModule/Classes/Feature/Comment/**/*'
+      s1.public_header_files = 'LNFeedModule/Classes/Feature/Comment/*.h'
+      s1.dependency 'LNFeedModule/Feature/Base'
+    end
+    feature.subspec 'Like' do |s1|
+      s1.source_files = 'LNFeedModule/Classes/Feature/Like/**/*'
+      s1.public_header_files = 'LNFeedModule/Classes/Feature/Like/*.h'
+      s1.dependency 'LNFeedModule/Feature/Base'
+    end
+    feature.subspec 'Topic' do |s1|
+      s1.source_files = 'LNFeedModule/Classes/Feature/Topic/**/*'
+      s1.public_header_files = 'LNFeedModule/Classes/Feature/Topic/*.h'
+      s1.dependency 'LNFeedModule/Feature/Base'
+    end
+    
     feature.resource_bundles = {
       'LNFeedModule' => ['LNFeedModule/Classes/Feature/**/*.xib']
     }

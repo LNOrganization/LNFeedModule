@@ -6,9 +6,8 @@
 //
 
 #import <Foundation/Foundation.h>
+#import <LNCommonKit/LNNetworkConst.h>
 
-
-@protocol LNNetworkConfigAdapter;
 
 @interface LNAFNetworkConfig : NSObject<LNNetworkConfigAdapter>
 
