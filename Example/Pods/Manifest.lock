@@ -15,69 +15,69 @@ PODS:
   - AFNetworking/UIKit (4.0.1):
     - AFNetworking/NSURLSession
   - JSONModel (1.8.0)
-  - LNCommonKit (1.0.2):
-    - LNCommonKit/Base (= 1.0.2)
-    - LNCommonKit/Consttant (= 1.0.2)
-    - LNCommonKit/CustomUIKit (= 1.0.2)
-    - LNCommonKit/Foundation (= 1.0.2)
-    - LNCommonKit/Log (= 1.0.2)
-    - LNCommonKit/Network (= 1.0.2)
-    - LNCommonKit/Router (= 1.0.2)
-  - LNCommonKit/Base (1.0.2):
-    - LNCommonKit/Base/BaseVC (= 1.0.2)
-    - LNCommonKit/Base/CollectionVC (= 1.0.2)
-    - LNCommonKit/Base/Core (= 1.0.2)
-    - LNCommonKit/Base/DataModel (= 1.0.2)
-    - LNCommonKit/Base/Provider (= 1.0.2)
-    - LNCommonKit/Base/TableVC (= 1.0.2)
+  - LNCommonKit (1.0.4):
+    - LNCommonKit/Base (= 1.0.4)
+    - LNCommonKit/Consttant (= 1.0.4)
+    - LNCommonKit/CustomUIKit (= 1.0.4)
+    - LNCommonKit/Foundation (= 1.0.4)
+    - LNCommonKit/ImgLoopScroll (= 1.0.4)
+    - LNCommonKit/Log (= 1.0.4)
+    - LNCommonKit/Network (= 1.0.4)
+    - LNCommonKit/Router (= 1.0.4)
+  - LNCommonKit/Base (1.0.4):
+    - LNCommonKit/Base/BaseVC (= 1.0.4)
+    - LNCommonKit/Base/CollectionVC (= 1.0.4)
+    - LNCommonKit/Base/Core (= 1.0.4)
+    - LNCommonKit/Base/DataModel (= 1.0.4)
+    - LNCommonKit/Base/Provider (= 1.0.4)
+    - LNCommonKit/Base/TableVC (= 1.0.4)
     - LNCommonKit/Consttant
     - LNCommonKit/Log
-  - LNCommonKit/Base/BaseVC (1.0.2):
+  - LNCommonKit/Base/BaseVC (1.0.4):
     - LNCommonKit/Consttant
     - LNCommonKit/CustomUIKit
     - LNCommonKit/Log
-  - LNCommonKit/Base/CollectionVC (1.0.2):
+  - LNCommonKit/Base/CollectionVC (1.0.4):
     - LNCommonKit/Base/BaseVC
     - LNCommonKit/Base/Core
     - LNCommonKit/Consttant
     - LNCommonKit/Log
     - MJRefresh (~> 3.7.2)
-  - LNCommonKit/Base/Core (1.0.2):
+  - LNCommonKit/Base/Core (1.0.4):
     - LNCommonKit/Consttant
     - LNCommonKit/Log
-  - LNCommonKit/Base/DataModel (1.0.2):
+  - LNCommonKit/Base/DataModel (1.0.4):
     - JSONModel (~> 1.8.0)
     - LNCommonKit/Consttant
     - LNCommonKit/Log
-  - LNCommonKit/Base/Provider (1.0.2):
+  - LNCommonKit/Base/Provider (1.0.4):
     - LNCommonKit/Base/Core
     - LNCommonKit/Base/DataModel
     - LNCommonKit/Consttant
     - LNCommonKit/Log
     - LNCommonKit/Network
-  - LNCommonKit/Base/TableVC (1.0.2):
+  - LNCommonKit/Base/TableVC (1.0.4):
     - LNCommonKit/Base/BaseVC
     - LNCommonKit/Base/Core
     - LNCommonKit/Consttant
     - LNCommonKit/Log
     - MJRefresh (~> 3.7.2)
-  - LNCommonKit/Consttant (1.0.2)
-  - LNCommonKit/CustomUIKit (1.0.2):
-    - LNCommonKit/CustomUIKit/ImgLoopScroll (= 1.0.2)
-  - LNCommonKit/CustomUIKit/ImgLoopScroll (1.0.2)
-  - LNCommonKit/Foundation (1.0.2)
-  - LNCommonKit/Log (1.0.2)
-  - LNCommonKit/Network (1.0.2):
-    - LNCommonKit/Network/AFHTTPClient (= 1.0.2)
-    - LNCommonKit/Network/Core (= 1.0.2)
-    - LNCommonKit/Network/LNHTTPClient (= 1.0.2)
-  - LNCommonKit/Network/AFHTTPClient (1.0.2):
+  - LNCommonKit/Consttant (1.0.4)
+  - LNCommonKit/CustomUIKit (1.0.4)
+  - LNCommonKit/Foundation (1.0.4)
+  - LNCommonKit/ImgLoopScroll (1.0.4)
+  - LNCommonKit/Log (1.0.4)
+  - LNCommonKit/Network (1.0.4):
+    - LNCommonKit/Network/AFHTTPClient (= 1.0.4)
+    - LNCommonKit/Network/Core (= 1.0.4)
+    - LNCommonKit/Network/LNHTTPClient (= 1.0.4)
+  - LNCommonKit/Network/AFHTTPClient (1.0.4):
     - AFNetworking (~> 4.0.1)
     - LNCommonKit/Network/Core
-  - LNCommonKit/Network/Core (1.0.2)
-  - LNCommonKit/Network/LNHTTPClient (1.0.2):
+  - LNCommonKit/Network/Core (1.0.4)
+  - LNCommonKit/Network/LNHTTPClient (1.0.4):
     - LNCommonKit/Network/Core
-  - LNCommonKit/Router (1.0.2)
+  - LNCommonKit/Router (1.0.4)
   - LNFeedModule (0.1.7):
     - JSONModel (~> 1.8.0)
     - LNCommonKit
@@ -162,7 +162,7 @@ EXTERNAL SOURCES:
 SPEC CHECKSUMS:
   AFNetworking: 7864c38297c79aaca1500c33288e429c3451fdce
   JSONModel: 02ab723958366a3fd27da57ea2af2113658762e9
-  LNCommonKit: 21a0a6d502a3c99052358bc8a014614ad392e00e
+  LNCommonKit: c9fc5119f1c83b9d0e8b0861218d2934f7cd7964
   LNFeedModule: 0c204a80f87ee99c4222a078a1c79ab6704ea737
   LNModuleCore: 29c56ccca0d7386575d591b56c432f288da21e64
   LNModuleProtocol: 0c7c20e98b1c6006c7fdbe753aa6862b1d8c9765

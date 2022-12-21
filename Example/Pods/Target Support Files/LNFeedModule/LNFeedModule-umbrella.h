@@ -12,9 +12,9 @@
 
 #import "LNFeedModule+AppDelegate.h"
 #import "LNFeedModule.h"
+#import "LNFeedCommon.h"
 #import "LNFeedMediatorDelegate.h"
 #import "LNFeedModelConfig.h"
-#import "LNFeedCommon.h"
 #import "LNUIKitHelper.h"
 #import "UIFont+LNAddition.h"
 #import "UIScreen+LNUIKit.h"

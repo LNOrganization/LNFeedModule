@@ -7,6 +7,7 @@
 
 #import "LNBaseListDataProvider.h"
 #import "LNFeedNetworkConst.h"
+#import <LNCommonKit/LNDataModel.h>
 NS_ASSUME_NONNULL_BEGIN
 
 @interface LNBaseFeedListProvider : LNBaseListDataProvider

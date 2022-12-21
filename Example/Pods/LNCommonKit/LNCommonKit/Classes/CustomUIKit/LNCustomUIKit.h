@@ -11,10 +11,6 @@
 #import <LNCommonKit/UIColor+Custom.h>
 #import <LNCommonKit/UIScreen+LNUIKit.h>
 
-#if __has_include(<LNCommonKit/LNImageLoopScrollView.h>)
-#import <LNCommonKit/LNImageLoopScrollView.h>
-#endif
-
 #define LNScreenWidth               [UIScreen mainScreen].bounds.size.width
 #define LNScreenHeight              [UIScreen mainScreen].bounds.size.height
 #define LNMaxScreenWidth            MAX(LGScreenWidth, LNScreenHeight)
