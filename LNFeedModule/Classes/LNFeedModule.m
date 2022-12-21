@@ -8,14 +8,11 @@
 #import "LNFeedModule.h"
 #import "LNFeedModelConfig.h"
 #import <LNModuleProtocol/LNFeedModuleProtocol.h>
-#import <LNModuleCore/LNModuleCore.h>
+#import <LNModuleCore/LNModuleManager.h>
 
 //注册类名和协议名称
 __attribute__((constructor)) void addModuleLNFeedModule(void){
-    static dispatch_once_t onceToken;
-    dispatch_once(&onceToken, ^{
-        [[LNModuleManager sharedInstance] addImpClassName:@"LNFeedModule" protocolName:@"LNFeedModuleProtocol"];
-    });
+    [[LNModuleManager sharedInstance] addImpClassName:@"LNFeedModule" protocolName:@"LNFeedModuleProtocol"];
 }
 
 

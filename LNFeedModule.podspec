@@ -20,11 +20,11 @@ Pod::Spec.new do |s|
   s.description      = <<-DESC
 实现feed流模块.
                        DESC
-  s.homepage         = 'https://github.com/NoNameOrganazation/LNFeedModule'
+  s.homepage         = 'https://github.com/LNOrganization/LNFeedModule'
   # s.screenshots     = 'www.example.com/screenshots_1', 'www.example.com/screenshots_2'
   s.license          = { :type => 'MIT', :file => 'LICENSE' }
   s.author           = { 'dongjianxiong' => 'jianxiong20090919@126.com' }
-  s.source           = { :git => 'https://github.com/NoNameOrganazation/LNFeedModule.git', :tag => s.version.to_s }
+  s.source           = { :git => 'https://github.com/LNOrganization/LNFeedModule.git', :tag => s.version.to_s }
   # s.social_media_url = 'https://twitter.com/<TWITTER_USERNAME>'
 
   s.ios.deployment_target = '9.0'
@@ -36,9 +36,15 @@ Pod::Spec.new do |s|
     network.source_files = 'LNFeedModule/Classes/Network/**/*'
     network.public_header_files = 'LNFeedModule/Classes/Network/*.h'
   end
+  
   s.subspec 'Common' do |common|
     common.source_files = 'LNFeedModule/Classes/Common/**/*'
     common.public_header_files = 'LNFeedModule/Classes/Common/*.h'
+  end
+  
+  s.subspec 'Data' do |data|
+    data.source_files = 'LNFeedModule/Classes/Data/**/*'
+    data.public_header_files = 'LNFeedModule/Classes/Data/*.h'
   end
   
   s.subspec 'CustomUIKit' do |uikit|
@@ -55,6 +61,7 @@ Pod::Spec.new do |s|
     feature.dependency 'LNFeedModule/CustomUIKit'
     feature.dependency 'LNFeedModule/Common'
     feature.dependency 'LNFeedModule/Network'
+    feature.dependency 'LNFeedModule/Data'
   end
   
   s.subspec 'Mediator' do |mediator|
@@ -62,7 +69,7 @@ Pod::Spec.new do |s|
     mediator.dependency 'LNFeedModule/Feature'
   end
   
-  #私有库
+#  #私有库
   s.dependency 'LNModuleProtocol'
   s.dependency 'LNCommonKit'
   

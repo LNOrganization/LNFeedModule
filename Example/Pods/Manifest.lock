@@ -15,74 +15,124 @@ PODS:
   - AFNetworking/UIKit (4.0.1):
     - AFNetworking/NSURLSession
   - JSONModel (1.8.0)
-  - LNCommonKit (1.0.0):
-    - LNCommonKit/BaseMVC (= 1.0.0)
-    - LNCommonKit/Consttant (= 1.0.0)
-    - LNCommonKit/CustomUIKit (= 1.0.0)
-    - LNCommonKit/Foundation (= 1.0.0)
-    - LNCommonKit/Log (= 1.0.0)
-    - LNCommonKit/Network (= 1.0.0)
-    - LNCommonKit/Router (= 1.0.0)
-  - LNCommonKit/BaseMVC (1.0.0):
+  - LNCommonKit (1.0.2):
+    - LNCommonKit/Base (= 1.0.2)
+    - LNCommonKit/Consttant (= 1.0.2)
+    - LNCommonKit/CustomUIKit (= 1.0.2)
+    - LNCommonKit/Foundation (= 1.0.2)
+    - LNCommonKit/Log (= 1.0.2)
+    - LNCommonKit/Network (= 1.0.2)
+    - LNCommonKit/Router (= 1.0.2)
+  - LNCommonKit/Base (1.0.2):
+    - LNCommonKit/Base/BaseVC (= 1.0.2)
+    - LNCommonKit/Base/CollectionVC (= 1.0.2)
+    - LNCommonKit/Base/Core (= 1.0.2)
+    - LNCommonKit/Base/DataModel (= 1.0.2)
+    - LNCommonKit/Base/Provider (= 1.0.2)
+    - LNCommonKit/Base/TableVC (= 1.0.2)
+    - LNCommonKit/Consttant
+    - LNCommonKit/Log
+  - LNCommonKit/Base/BaseVC (1.0.2):
+    - LNCommonKit/Consttant
     - LNCommonKit/CustomUIKit
-    - LNCommonKit/Network
+    - LNCommonKit/Log
+  - LNCommonKit/Base/CollectionVC (1.0.2):
+    - LNCommonKit/Base/BaseVC
+    - LNCommonKit/Base/Core
+    - LNCommonKit/Consttant
+    - LNCommonKit/Log
     - MJRefresh (~> 3.7.2)
-  - LNCommonKit/Consttant (1.0.0)
-  - LNCommonKit/CustomUIKit (1.0.0):
-    - LNCommonKit/CustomUIKit/ImgLoopScroll (= 1.0.0)
-  - LNCommonKit/CustomUIKit/ImgLoopScroll (1.0.0)
-  - LNCommonKit/Foundation (1.0.0)
-  - LNCommonKit/Log (1.0.0)
-  - LNCommonKit/Network (1.0.0):
+  - LNCommonKit/Base/Core (1.0.2):
+    - LNCommonKit/Consttant
+    - LNCommonKit/Log
+  - LNCommonKit/Base/DataModel (1.0.2):
+    - JSONModel (~> 1.8.0)
+    - LNCommonKit/Consttant
+    - LNCommonKit/Log
+  - LNCommonKit/Base/Provider (1.0.2):
+    - LNCommonKit/Base/Core
+    - LNCommonKit/Base/DataModel
+    - LNCommonKit/Consttant
+    - LNCommonKit/Log
+    - LNCommonKit/Network
+  - LNCommonKit/Base/TableVC (1.0.2):
+    - LNCommonKit/Base/BaseVC
+    - LNCommonKit/Base/Core
+    - LNCommonKit/Consttant
+    - LNCommonKit/Log
+    - MJRefresh (~> 3.7.2)
+  - LNCommonKit/Consttant (1.0.2)
+  - LNCommonKit/CustomUIKit (1.0.2):
+    - LNCommonKit/CustomUIKit/ImgLoopScroll (= 1.0.2)
+  - LNCommonKit/CustomUIKit/ImgLoopScroll (1.0.2)
+  - LNCommonKit/Foundation (1.0.2)
+  - LNCommonKit/Log (1.0.2)
+  - LNCommonKit/Network (1.0.2):
+    - LNCommonKit/Network/AFHTTPClient (= 1.0.2)
+    - LNCommonKit/Network/Core (= 1.0.2)
+    - LNCommonKit/Network/LNHTTPClient (= 1.0.2)
+  - LNCommonKit/Network/AFHTTPClient (1.0.2):
     - AFNetworking (~> 4.0.1)
-  - LNCommonKit/Router (1.0.0)
-  - LNFeedModule (0.1.6):
+    - LNCommonKit/Network/Core
+  - LNCommonKit/Network/Core (1.0.2)
+  - LNCommonKit/Network/LNHTTPClient (1.0.2):
+    - LNCommonKit/Network/Core
+  - LNCommonKit/Router (1.0.2)
+  - LNFeedModule (0.1.7):
     - JSONModel (~> 1.8.0)
     - LNCommonKit
-    - LNFeedModule/Common (= 0.1.6)
-    - LNFeedModule/CustomUIKit (= 0.1.6)
-    - LNFeedModule/Feature (= 0.1.6)
-    - LNFeedModule/Mediator (= 0.1.6)
-    - LNFeedModule/Network (= 0.1.6)
+    - LNFeedModule/Common (= 0.1.7)
+    - LNFeedModule/CustomUIKit (= 0.1.7)
+    - LNFeedModule/Data (= 0.1.7)
+    - LNFeedModule/Feature (= 0.1.7)
+    - LNFeedModule/Mediator (= 0.1.7)
+    - LNFeedModule/Network (= 0.1.7)
     - LNModuleProtocol
     - MBProgressHUD (~> 1.0.0)
     - SDWebImage (~> 5.9.0)
-  - LNFeedModule/Common (0.1.6):
+  - LNFeedModule/Common (0.1.7):
     - JSONModel (~> 1.8.0)
     - LNCommonKit
     - LNModuleProtocol
     - MBProgressHUD (~> 1.0.0)
     - SDWebImage (~> 5.9.0)
-  - LNFeedModule/CustomUIKit (0.1.6):
+  - LNFeedModule/CustomUIKit (0.1.7):
     - JSONModel (~> 1.8.0)
     - LNCommonKit
     - LNModuleProtocol
     - MBProgressHUD (~> 1.0.0)
     - SDWebImage (~> 5.9.0)
-  - LNFeedModule/Feature (0.1.6):
+  - LNFeedModule/Data (0.1.7):
+    - JSONModel (~> 1.8.0)
+    - LNCommonKit
+    - LNModuleProtocol
+    - MBProgressHUD (~> 1.0.0)
+    - SDWebImage (~> 5.9.0)
+  - LNFeedModule/Feature (0.1.7):
     - JSONModel (~> 1.8.0)
     - LNCommonKit
     - LNFeedModule/Common
     - LNFeedModule/CustomUIKit
+    - LNFeedModule/Data
     - LNFeedModule/Network
     - LNModuleProtocol
     - MBProgressHUD (~> 1.0.0)
     - SDWebImage (~> 5.9.0)
-  - LNFeedModule/Mediator (0.1.6):
+  - LNFeedModule/Mediator (0.1.7):
     - JSONModel (~> 1.8.0)
     - LNCommonKit
     - LNFeedModule/Feature
     - LNModuleProtocol
     - MBProgressHUD (~> 1.0.0)
     - SDWebImage (~> 5.9.0)
-  - LNFeedModule/Network (0.1.6):
+  - LNFeedModule/Network (0.1.7):
     - JSONModel (~> 1.8.0)
     - LNCommonKit
     - LNModuleProtocol
     - MBProgressHUD (~> 1.0.0)
     - SDWebImage (~> 5.9.0)
-  - LNModuleCore (0.1.9)
-  - LNModuleProtocol (1.0.0):
+  - LNModuleCore (1.0.0)
+  - LNModuleProtocol (1.0.1):
     - LNModuleCore
   - MBProgressHUD (1.0.0)
   - MJRefresh (3.7.5)
@@ -100,7 +150,7 @@ SPEC REPOS:
     - MBProgressHUD
     - MJRefresh
     - SDWebImage
-  https://github.com/NoNameOrganazation/LNSpec.git:
+  https://github.com/LNOrganization/LNSpec.git:
     - LNCommonKit
     - LNModuleCore
     - LNModuleProtocol
@@ -112,14 +162,14 @@ EXTERNAL SOURCES:
 SPEC CHECKSUMS:
   AFNetworking: 7864c38297c79aaca1500c33288e429c3451fdce
   JSONModel: 02ab723958366a3fd27da57ea2af2113658762e9
-  LNCommonKit: 632a5ecb084048c3742f35bf108e5b7a6ec8c172
-  LNFeedModule: fef83deb234340d3a2e252a02cc205887c85c6d1
-  LNModuleCore: d37faf840963a9ccc7e6830331e1f340d86ac866
-  LNModuleProtocol: 8fc489749fc2d6d3df1a3be70c1cff817ae5a143
+  LNCommonKit: 21a0a6d502a3c99052358bc8a014614ad392e00e
+  LNFeedModule: 0c204a80f87ee99c4222a078a1c79ab6704ea737
+  LNModuleCore: 29c56ccca0d7386575d591b56c432f288da21e64
+  LNModuleProtocol: 0c7c20e98b1c6006c7fdbe753aa6862b1d8c9765
   MBProgressHUD: 4890f671c94e8a0f3cf959aa731e9de2f036d71a
   MJRefresh: fdf5e979eb406a0341468932d1dfc8b7f9fce961
   SDWebImage: 0b2ba0d56479bf6a45ecddbfd5558bea93150d25
 
-PODFILE CHECKSUM: 8df8bd50df052a0a66d53e75b03222ad35590c1f
+PODFILE CHECKSUM: 7630cd07f095d175a33b37fbab7dc460e791a40a
 
 COCOAPODS: 1.11.3

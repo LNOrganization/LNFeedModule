@@ -6,8 +6,9 @@
 //
 
 #import "LNFeedMediator.h"
-#import <LNCommonKit/LNRouter.h>
+#import <LNCommonKit/LNRouterHeader.h>
 
+#import "LNFeedModelConfig.h"
 #import "LNTopicFeedTableViewController.h"
 #import "LNFeedDetailViewController.h"
 #import "LNFeedRecommendListController.h"

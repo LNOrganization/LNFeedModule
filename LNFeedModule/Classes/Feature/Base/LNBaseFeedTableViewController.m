@@ -9,6 +9,8 @@
 #import "LNFeedImageTableViewCell.h"
 #import "LNFeedVideoTableViewCell.h"
 #import "LNFeedProvider.h"
+#import "LNFeedModelConfig.h"
+#import <LNCommonKit/LNRouterHeader.h>
 
 @interface LNBaseFeedTableViewController ()<LNFeedViewEventDelegate>
 
@@ -76,16 +78,16 @@
 #pragma mark - LNFeedViewDelegate
 - (void)feedView:(nonnull LNFeedTableViewCell *)cell clickOnLikeFeed:(nonnull LNFeed *)feed
           isLike:(BOOL)isLike {
-    [self.feedProvider feed:feed like:isLike completion:^(NSString * _Nonnull error) {
-        [self reloadTableViewCell:cell];
+    [self.feedProvider feed:feed like:isLike completion:^(BOOL isSucceed, id  _Nullable data, NSString * _Nonnull errMsg) {
+        [self reloadCell:cell];
     }];
 }
 
 - (void)feedView:(nonnull LNFeedTableViewCell *)cell
 clickOnStoreFeed:(nonnull LNFeed *)feed
          isStore:(BOOL)isStore {
-    [self.feedProvider feed:feed store:isStore completion:^(NSString * _Nonnull error) {
-        [self reloadTableViewCell:cell];
+    [self.feedProvider feed:feed store:isStore completion:^(BOOL isSucceed, id  _Nullable data, NSString * _Nonnull errMsg) {
+        [self reloadCell:cell];
     }];
 }
 

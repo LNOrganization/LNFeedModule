@@ -7,8 +7,6 @@
 
 #import <Foundation/Foundation.h>
 #import "LNFeedMediatorDelegate.h"
-#import <LNCommonKit/LNCommonKit.h>
-#import <LNModuleCore/LNModuleCore.h>
 #import <LNModuleProtocol/LNModuleProtocol.h>
 
 NS_ASSUME_NONNULL_BEGIN

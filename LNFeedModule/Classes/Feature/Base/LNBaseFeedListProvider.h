@@ -11,7 +11,9 @@ NS_ASSUME_NONNULL_BEGIN
 
 @interface LNBaseFeedListProvider : LNBaseListDataProvider
 
+- (LNListJSONResponse *)feedCellLayoutResponseWithFeedResponse:(LNListJSONResponse *)feedListResponse;
 
+- (NSDictionary *)localData;
 @end
 
 NS_ASSUME_NONNULL_END

@@ -6,6 +6,8 @@
 //
 
 #import "LNFeedModelConfig.h"
+#import <LNCommonKit/LNCommonKit.h>
+#import <LNModuleCore/LNModuleManager.h>
 
 @implementation LNFeedModelConfig
 

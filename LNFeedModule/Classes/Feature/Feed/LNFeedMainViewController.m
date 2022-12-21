@@ -6,8 +6,9 @@
 //
 
 #import "LNFeedMainViewController.h"
+#import <LNCommonKit/LNCommonKit.h>
 #import "LNFeedModelConfig.h"
-
+#import "LNFeedMediatorDelegate.h"
 
 
 @interface LNFeedMainViewController ()

@@ -7,7 +7,7 @@
 
 #import "LNBaseTableViewController.h"
 #import "LNFeedTableViewCell.h"
-#import "LNFeedModelConfig.h"
+#import "LNFeedMediatorDelegate.h"
 
 
 NS_ASSUME_NONNULL_BEGIN

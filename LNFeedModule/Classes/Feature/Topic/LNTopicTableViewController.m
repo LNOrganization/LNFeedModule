@@ -6,7 +6,7 @@
 //
 
 #import "LNTopicTableViewController.h"
-//#import "LNTopicListDataSource.h"
+//#import "LNTopicListDataProvider.h"
 
 @interface LNTopicTableViewController ()
 
@@ -19,7 +19,7 @@
     
     self.tableView.rowHeight = 40;
     
-//    self.dataSource = [[LNTopicListDataSource alloc] init];
+//    self.dataSource = [[LNTopicListDataProvider alloc] init];
 //    
 //    [self.dataSource refreshData];
     // Do any additional setup after loading the view.
