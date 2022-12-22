@@ -50,7 +50,7 @@
 
 - (UICollectionView *)createCollectionView
 {
-    UICollectionViewFlowLayout *layout = [[UICollectionViewFlowLayout alloc] init];
+    UICollectionViewFlowLayout *layout = [self layout];
     UICollectionView *collectionView = [[UICollectionView alloc] initWithFrame:self.view.bounds collectionViewLayout:layout];
     collectionView.delegate = self;
     collectionView.dataSource = self;
@@ -94,6 +94,11 @@
     }else{
         [self.collectionView reloadData];
     }
+}
+
+- (UICollectionViewFlowLayout *)layout
+{
+    return [[UICollectionViewFlowLayout alloc] init];
 }
 
 #pragma mark - UICollectionViewDataSource
